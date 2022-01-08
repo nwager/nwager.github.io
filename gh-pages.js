@@ -4,10 +4,10 @@ ghpages.publish(
 	'public', // path to public directory
 	{
 		branch: 'gh-pages',
-		repo: 'https://github.com/el3um4s/petits-chevaux.git', // Update to point to your repository
+		repo: 'https://github.com/nwager/nwager.github.io.git',
 		user: {
-			name: 'Samuele', // update to use your name
-			email: 'samuele@stranianelli.com' // Update to use your email
+			name: 'Noah Wager',
+			email: 'noahwager@gmail.com'
 		},
 		dotfiles: true
 	},
