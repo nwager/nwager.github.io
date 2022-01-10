@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "name": "portfolio-font",
+    "lastOpened": 0,
+    "created": 1641793028789
+  },
+  "iconSets": [
+    {
+      "selection": [
+        {
+          "order": 2,
+          "id": 1,
+          "name": "chevron-left",
+          "prevSize": 32,
+          "code": 59648,
+          "tempChar": ""
+        },
+        {
+          "order": 3,
+          "id": 0,
+          "name": "chevron-right",
+          "prevSize": 32,
+          "code": 59649,
+          "tempChar": ""
+        }
+      ],
+      "id": 0,
+      "metadata": {
+        "name": "General",
+        "importSize": {
+          "width": 16,
+          "height": 16
+        }
+      },
+      "height": 1024,
+      "prevSize": 32,
+      "icons": [
+        {
+          "id": 1,
+          "paths": [
+            "M726.656 105.344c5.808 5.794 9.401 13.805 9.401 22.656s-3.593 16.862-9.401 22.655l-0.001 0.001-361.408 361.344 361.408 361.344c5.798 5.798 9.384 13.808 9.384 22.656 0 17.695-14.345 32.040-32.040 32.040-8.848 0-16.858-3.586-22.656-9.384v0l-384-384c-5.808-5.794-9.401-13.805-9.401-22.656s3.593-16.862 9.401-22.655l0.001-0.001 384-384c5.794-5.808 13.805-9.401 22.656-9.401s16.862 3.593 22.655 9.401l0.001 0.001z"
+          ],
+          "attrs": [
+            {}
+          ],
+          "isMulticolor": false,
+          "isMulticolor2": false,
+          "grid": 0,
+          "tags": [
+            "chevron-left"
+          ]
+        },
+        {
+          "id": 0,
+          "paths": [
+            "M297.344 105.344c5.794-5.808 13.805-9.401 22.656-9.401s16.862 3.593 22.655 9.401l0.001 0.001 384 384c5.808 5.794 9.401 13.805 9.401 22.656s-3.593 16.862-9.401 22.655l-0.001 0.001-384 384c-5.798 5.798-13.808 9.384-22.656 9.384-17.695 0-32.040-14.345-32.040-32.040 0-8.848 3.586-16.858 9.384-22.656v0l361.408-361.344-361.408-361.344c-5.808-5.794-9.401-13.805-9.401-22.656s3.593-16.862 9.401-22.655l0.001-0.001z"
+          ],
+          "attrs": [
+            {}
+          ],
+          "isMulticolor": false,
+          "isMulticolor2": false,
+          "grid": 0,
+          "tags": [
+            "chevron-right"
+          ]
+        }
+      ],
+      "invisible": false,
+      "colorThemes": []
+    }
+  ],
+  "uid": -1,
+  "preferences": {
+    "showGlyphs": true,
+    "showCodes": true,
+    "showQuickUse": true,
+    "showQuickUse2": true,
+    "showSVGs": true,
+    "fontPref": {
+      "prefix": "icon-",
+      "metadata": {
+        "fontFamily": "portfolio-font",
+        "majorVersion": 1,
+        "minorVersion": 0
+      },
+      "metrics": {
+        "emSize": 1024,
+        "baseline": 6.25,
+        "whitespace": 50
+      },
+      "embed": false,
+      "cssVars": true,
+      "cssVarsFormat": "scss",
+      "showMetrics": false,
+      "showMetadata": false,
+      "showVersion": false,
+      "showSelector": true,
+      "selector": "class",
+      "classSelector": ".icon"
+    },
+    "imagePref": {
+      "prefix": "icon-",
+      "png": true,
+      "useClassSelector": true,
+      "color": 0,
+      "bgColor": 16777215
+    },
+    "historySize": 50
+  }
+}

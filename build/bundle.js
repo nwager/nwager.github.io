@@ -420,36 +420,47 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (19:4) {#each images as _, i}
+    // (23:4) {#each images as _, i}
     function create_each_block$1(ctx) {
-    	let div;
-    	let div_class_value;
+    	let div1;
+    	let div0;
+    	let t0;
+    	let t1;
+    	let div1_class_value;
     	let mounted;
     	let dispose;
 
     	const block = {
     		c: function create() {
-    			div = element("div");
-    			attr_dev(div, "class", div_class_value = "" + (null_to_empty("indicator " + (/*i*/ ctx[6] == /*currIdx*/ ctx[1] ? "active" : "")) + " svelte-1teqqdb"));
-    			add_location(div, file$2, 19, 6, 694);
+    			div1 = element("div");
+    			div0 = element("div");
+    			t0 = text(/*i*/ ctx[6]);
+    			t1 = space();
+    			attr_dev(div0, "class", "graphic svelte-1d58hvb");
+    			add_location(div0, file$2, 27, 8, 904);
+    			attr_dev(div1, "class", div1_class_value = "" + (null_to_empty("indicator " + (/*i*/ ctx[6] == /*currIdx*/ ctx[1] ? "active" : "")) + " svelte-1d58hvb"));
+    			add_location(div1, file$2, 23, 6, 787);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, div0);
+    			append_dev(div0, t0);
+    			append_dev(div1, t1);
 
     			if (!mounted) {
-    				dispose = listen_dev(div, "click", /*changeImage*/ ctx[2](/*i*/ ctx[6]), false, false, false);
+    				dispose = listen_dev(div1, "click", /*changeImage*/ ctx[2](/*i*/ ctx[6]), false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (dirty & /*currIdx*/ 2 && div_class_value !== (div_class_value = "" + (null_to_empty("indicator " + (/*i*/ ctx[6] == /*currIdx*/ ctx[1] ? "active" : "")) + " svelte-1teqqdb"))) {
-    				attr_dev(div, "class", div_class_value);
+    			if (dirty & /*currIdx*/ 2 && div1_class_value !== (div1_class_value = "" + (null_to_empty("indicator " + (/*i*/ ctx[6] == /*currIdx*/ ctx[1] ? "active" : "")) + " svelte-1d58hvb"))) {
+    				attr_dev(div1, "class", div1_class_value);
     			}
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(div1);
     			mounted = false;
     			dispose();
     		}
@@ -459,7 +470,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(19:4) {#each images as _, i}",
+    		source: "(23:4) {#each images as _, i}",
     		ctx
     	});
 
@@ -467,15 +478,17 @@ var app = (function () {
     }
 
     function create_fragment$2(ctx) {
-    	let div3;
+    	let div5;
     	let img;
     	let img_src_value;
     	let t0;
+    	let div1;
     	let div0;
     	let t1;
-    	let div1;
-    	let t2;
+    	let div3;
     	let div2;
+    	let t2;
+    	let div4;
     	let mounted;
     	let dispose;
     	let each_value = /*images*/ ctx[0];
@@ -488,14 +501,16 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div3 = element("div");
+    			div5 = element("div");
     			img = element("img");
     			t0 = space();
+    			div1 = element("div");
     			div0 = element("div");
     			t1 = space();
-    			div1 = element("div");
-    			t2 = space();
+    			div3 = element("div");
     			div2 = element("div");
+    			t2 = space();
+    			div4 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
@@ -503,38 +518,44 @@ var app = (function () {
 
     			if (!src_url_equal(img.src, img_src_value = /*images*/ ctx[0][/*currIdx*/ ctx[1]])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Carousel");
-    			attr_dev(img, "class", "svelte-1teqqdb");
+    			attr_dev(img, "class", "svelte-1d58hvb");
     			add_location(img, file$2, 14, 2, 422);
-    			attr_dev(div0, "class", "carousel-button prev svelte-1teqqdb");
-    			add_location(div0, file$2, 15, 2, 469);
-    			attr_dev(div1, "class", "carousel-button next svelte-1teqqdb");
-    			add_location(div1, file$2, 16, 2, 548);
-    			attr_dev(div2, "class", "indicator-container svelte-1teqqdb");
-    			add_location(div2, file$2, 17, 2, 627);
-    			attr_dev(div3, "class", "carousel svelte-1teqqdb");
-    			add_location(div3, file$2, 13, 0, 397);
+    			attr_dev(div0, "class", "icon icon-chevron-left svelte-1d58hvb");
+    			add_location(div0, file$2, 16, 4, 544);
+    			attr_dev(div1, "class", "carousel-button prev svelte-1d58hvb");
+    			add_location(div1, file$2, 15, 2, 469);
+    			attr_dev(div2, "class", "icon icon-chevron-right svelte-1d58hvb");
+    			add_location(div2, file$2, 19, 4, 669);
+    			attr_dev(div3, "class", "carousel-button next svelte-1d58hvb");
+    			add_location(div3, file$2, 18, 2, 594);
+    			attr_dev(div4, "class", "indicator-container svelte-1d58hvb");
+    			add_location(div4, file$2, 21, 2, 720);
+    			attr_dev(div5, "class", "carousel svelte-1d58hvb");
+    			add_location(div5, file$2, 13, 0, 397);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div3, anchor);
-    			append_dev(div3, img);
-    			append_dev(div3, t0);
-    			append_dev(div3, div0);
-    			append_dev(div3, t1);
-    			append_dev(div3, div1);
-    			append_dev(div3, t2);
+    			insert_dev(target, div5, anchor);
+    			append_dev(div5, img);
+    			append_dev(div5, t0);
+    			append_dev(div5, div1);
+    			append_dev(div1, div0);
+    			append_dev(div5, t1);
+    			append_dev(div5, div3);
     			append_dev(div3, div2);
+    			append_dev(div5, t2);
+    			append_dev(div5, div4);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div2, null);
+    				each_blocks[i].m(div4, null);
     			}
 
     			if (!mounted) {
     				dispose = [
     					listen_dev(
-    						div0,
+    						div1,
     						"click",
     						function () {
     							if (is_function(/*changeImage*/ ctx[2](/*currIdx*/ ctx[1] - 1))) /*changeImage*/ ctx[2](/*currIdx*/ ctx[1] - 1).apply(this, arguments);
@@ -544,7 +565,7 @@ var app = (function () {
     						false
     					),
     					listen_dev(
-    						div1,
+    						div3,
     						"click",
     						function () {
     							if (is_function(/*changeImage*/ ctx[2](/*currIdx*/ ctx[1] + 1))) /*changeImage*/ ctx[2](/*currIdx*/ ctx[1] + 1).apply(this, arguments);
@@ -578,7 +599,7 @@ var app = (function () {
     					} else {
     						each_blocks[i] = create_each_block$1(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(div2, null);
+    						each_blocks[i].m(div4, null);
     					}
     				}
 
@@ -592,7 +613,7 @@ var app = (function () {
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div3);
+    			if (detaching) detach_dev(div5);
     			destroy_each(each_blocks, detaching);
     			mounted = false;
     			run_all(dispose);
