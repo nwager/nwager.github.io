@@ -1,4 +1,14 @@
-@import "font/style.css";
+@import "portfolio-font/style.css";
+
+@font-face { 
+	font-family: 'Noah-Regular';
+	src: url('noah-font/Noah-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Noah-Bold';
+	src: url('noah-font/Noah-Bold.woff') format('woff');
+}
 
 html, body {
 	position: relative;

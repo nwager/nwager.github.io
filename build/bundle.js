@@ -490,38 +490,49 @@ var app = (function () {
 
     // (20:2) {#each images as img, i}
     function create_each_block_1(ctx) {
+    	let a;
     	let img;
-    	let img_class_value;
     	let img_src_value;
+    	let a_href_value;
+    	let a_class_value;
 
     	const block = {
     		c: function create() {
+    			a = element("a");
     			img = element("img");
-
-    			attr_dev(img, "class", img_class_value = "" + (null_to_empty(classnames({
-    				active: /*i*/ ctx[9] == /*currIdx*/ ctx[1]
-    			})) + " svelte-9o4nqk"));
-
     			if (!src_url_equal(img.src, img_src_value = /*img*/ ctx[10])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Carousel");
-    			add_location(img, file$2, 20, 4, 672);
+    			attr_dev(img, "class", "svelte-tyal6n");
+    			add_location(img, file$2, 21, 6, 736);
+    			attr_dev(a, "href", a_href_value = /*img*/ ctx[10]);
+
+    			attr_dev(a, "class", a_class_value = "" + (null_to_empty(classnames({
+    				active: /*i*/ ctx[9] == /*currIdx*/ ctx[1]
+    			})) + " svelte-tyal6n"));
+
+    			add_location(a, file$2, 20, 4, 672);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, img, anchor);
+    			insert_dev(target, a, anchor);
+    			append_dev(a, img);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*currIdx*/ 2 && img_class_value !== (img_class_value = "" + (null_to_empty(classnames({
-    				active: /*i*/ ctx[9] == /*currIdx*/ ctx[1]
-    			})) + " svelte-9o4nqk"))) {
-    				attr_dev(img, "class", img_class_value);
-    			}
-
     			if (dirty & /*images*/ 1 && !src_url_equal(img.src, img_src_value = /*img*/ ctx[10])) {
     				attr_dev(img, "src", img_src_value);
     			}
+
+    			if (dirty & /*images*/ 1 && a_href_value !== (a_href_value = /*img*/ ctx[10])) {
+    				attr_dev(a, "href", a_href_value);
+    			}
+
+    			if (dirty & /*currIdx*/ 2 && a_class_value !== (a_class_value = "" + (null_to_empty(classnames({
+    				active: /*i*/ ctx[9] == /*currIdx*/ ctx[1]
+    			})) + " svelte-tyal6n"))) {
+    				attr_dev(a, "class", a_class_value);
+    			}
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(img);
+    			if (detaching) detach_dev(a);
     		}
     	};
 
@@ -536,8 +547,8 @@ var app = (function () {
     	return block;
     }
 
-    // (23:2) {#if numImgs > 1}
-    function create_if_block$1(ctx) {
+    // (25:2) {#if numImgs > 1}
+    function create_if_block(ctx) {
     	let div5;
     	let div1;
     	let div0;
@@ -572,18 +583,18 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div0, "class", "icon icon-chevron-left svelte-9o4nqk");
-    			add_location(div0, file$2, 25, 8, 925);
-    			attr_dev(div1, "class", "carousel-button prev svelte-9o4nqk");
-    			add_location(div1, file$2, 24, 6, 846);
-    			attr_dev(div2, "class", "icon icon-chevron-right svelte-9o4nqk");
-    			add_location(div2, file$2, 28, 8, 1062);
-    			attr_dev(div3, "class", "carousel-button next svelte-9o4nqk");
-    			add_location(div3, file$2, 27, 6, 983);
-    			attr_dev(div4, "class", "indicator-container svelte-9o4nqk");
-    			add_location(div4, file$2, 30, 6, 1121);
-    			attr_dev(div5, "class", div5_class_value = "" + (null_to_empty(classnames("carousel-ui", { hidden: /*hideUi*/ ctx[2] })) + " svelte-9o4nqk"));
-    			add_location(div5, file$2, 23, 4, 782);
+    			attr_dev(div0, "class", "icon icon-chevron-left svelte-tyal6n");
+    			add_location(div0, file$2, 27, 8, 955);
+    			attr_dev(div1, "class", "carousel-button prev svelte-tyal6n");
+    			add_location(div1, file$2, 26, 6, 876);
+    			attr_dev(div2, "class", "icon icon-chevron-right svelte-tyal6n");
+    			add_location(div2, file$2, 30, 8, 1092);
+    			attr_dev(div3, "class", "carousel-button next svelte-tyal6n");
+    			add_location(div3, file$2, 29, 6, 1013);
+    			attr_dev(div4, "class", "indicator-container svelte-tyal6n");
+    			add_location(div4, file$2, 32, 6, 1151);
+    			attr_dev(div5, "class", div5_class_value = "" + (null_to_empty(classnames("carousel-ui", { hidden: /*hideUi*/ ctx[2] })) + " svelte-tyal6n"));
+    			add_location(div5, file$2, 25, 4, 812);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div5, anchor);
@@ -653,7 +664,7 @@ var app = (function () {
     				each_blocks.length = each_value.length;
     			}
 
-    			if (dirty & /*hideUi*/ 4 && div5_class_value !== (div5_class_value = "" + (null_to_empty(classnames("carousel-ui", { hidden: /*hideUi*/ ctx[2] })) + " svelte-9o4nqk"))) {
+    			if (dirty & /*hideUi*/ 4 && div5_class_value !== (div5_class_value = "" + (null_to_empty(classnames("carousel-ui", { hidden: /*hideUi*/ ctx[2] })) + " svelte-tyal6n"))) {
     				attr_dev(div5, "class", div5_class_value);
     			}
     		},
@@ -667,19 +678,20 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$1.name,
+    		id: create_if_block.name,
     		type: "if",
-    		source: "(23:2) {#if numImgs > 1}",
+    		source: "(25:2) {#if numImgs > 1}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (32:8) {#each images as _, i}
+    // (34:8) {#each images as _, i}
     function create_each_block$1(ctx) {
     	let div1;
     	let div0;
+    	let t0_value = /*i*/ ctx[9] + 1 + "";
     	let t0;
     	let t1;
     	let div1_class_value;
@@ -690,16 +702,16 @@ var app = (function () {
     		c: function create() {
     			div1 = element("div");
     			div0 = element("div");
-    			t0 = text(/*i*/ ctx[9]);
+    			t0 = text(t0_value);
     			t1 = space();
-    			attr_dev(div0, "class", "graphic svelte-9o4nqk");
-    			add_location(div0, file$2, 36, 12, 1331);
+    			attr_dev(div0, "class", "graphic svelte-tyal6n");
+    			add_location(div0, file$2, 38, 12, 1361);
 
     			attr_dev(div1, "class", div1_class_value = "" + (null_to_empty(classnames("indicator", {
     				active: /*i*/ ctx[9] == /*currIdx*/ ctx[1]
-    			})) + " svelte-9o4nqk"));
+    			})) + " svelte-tyal6n"));
 
-    			add_location(div1, file$2, 32, 10, 1196);
+    			add_location(div1, file$2, 34, 10, 1226);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -717,7 +729,7 @@ var app = (function () {
 
     			if (dirty & /*currIdx*/ 2 && div1_class_value !== (div1_class_value = "" + (null_to_empty(classnames("indicator", {
     				active: /*i*/ ctx[9] == /*currIdx*/ ctx[1]
-    			})) + " svelte-9o4nqk"))) {
+    			})) + " svelte-tyal6n"))) {
     				attr_dev(div1, "class", div1_class_value);
     			}
     		},
@@ -732,7 +744,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(32:8) {#each images as _, i}",
+    		source: "(34:8) {#each images as _, i}",
     		ctx
     	});
 
@@ -752,7 +764,7 @@ var app = (function () {
     		each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
     	}
 
-    	let if_block = /*numImgs*/ ctx[3] > 1 && create_if_block$1(ctx);
+    	let if_block = /*numImgs*/ ctx[3] > 1 && create_if_block(ctx);
 
     	const block = {
     		c: function create() {
@@ -764,7 +776,7 @@ var app = (function () {
 
     			t = space();
     			if (if_block) if_block.c();
-    			attr_dev(div, "class", "carousel svelte-9o4nqk");
+    			attr_dev(div, "class", "carousel svelte-tyal6n");
     			add_location(div, file$2, 18, 0, 562);
     		},
     		l: function claim(nodes) {
@@ -790,7 +802,7 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*classNames, currIdx, images*/ 3) {
+    			if (dirty & /*images, classNames, currIdx*/ 3) {
     				each_value_1 = /*images*/ ctx[0];
     				validate_each_argument(each_value_1);
     				let i;
@@ -923,9 +935,13 @@ var app = (function () {
     /* src/Project.svelte generated by Svelte v3.45.0 */
     const file$1 = "src/Project.svelte";
 
-    // (8:2) {#if images}
-    function create_if_block(ctx) {
+    function create_fragment$1(ctx) {
+    	let div;
+    	let h2;
+    	let t1;
     	let imagecarousel;
+    	let t2;
+    	let p;
     	let current;
 
     	imagecarousel = new ImageCarousel({
@@ -935,10 +951,31 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			div = element("div");
+    			h2 = element("h2");
+    			h2.textContent = `${/*title*/ ctx[0]}`;
+    			t1 = space();
     			create_component(imagecarousel.$$.fragment);
+    			t2 = space();
+    			p = element("p");
+    			p.textContent = `${/*description*/ ctx[1]}`;
+    			attr_dev(h2, "class", "svelte-137lnrl");
+    			add_location(h2, file$1, 6, 2, 171);
+    			attr_dev(p, "class", "" + (null_to_empty("description") + " svelte-137lnrl"));
+    			add_location(p, file$1, 8, 2, 219);
+    			attr_dev(div, "class", "project svelte-137lnrl");
+    			add_location(div, file$1, 5, 0, 147);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			mount_component(imagecarousel, target, anchor);
+    			insert_dev(target, div, anchor);
+    			append_dev(div, h2);
+    			append_dev(div, t1);
+    			mount_component(imagecarousel, div, null);
+    			append_dev(div, t2);
+    			append_dev(div, p);
     			current = true;
     		},
     		p: noop,
@@ -952,73 +989,8 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			destroy_component(imagecarousel, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block.name,
-    		type: "if",
-    		source: "(8:2) {#if images}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    function create_fragment$1(ctx) {
-    	let div;
-    	let h2;
-    	let t1;
-    	let t2;
-    	let p;
-    	let current;
-    	let if_block = /*images*/ ctx[2] && create_if_block(ctx);
-
-    	const block = {
-    		c: function create() {
-    			div = element("div");
-    			h2 = element("h2");
-    			h2.textContent = `${/*title*/ ctx[0]}`;
-    			t1 = space();
-    			if (if_block) if_block.c();
-    			t2 = space();
-    			p = element("p");
-    			p.textContent = `${/*description*/ ctx[1]}`;
-    			add_location(h2, file$1, 6, 2, 171);
-    			attr_dev(p, "class", "" + (null_to_empty("description") + " svelte-1o8j3j9"));
-    			add_location(p, file$1, 10, 2, 244);
-    			attr_dev(div, "class", "project svelte-1o8j3j9");
-    			add_location(div, file$1, 5, 0, 147);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			append_dev(div, h2);
-    			append_dev(div, t1);
-    			if (if_block) if_block.m(div, null);
-    			append_dev(div, t2);
-    			append_dev(div, p);
-    			current = true;
-    		},
-    		p: function update(ctx, [dirty]) {
-    			if (/*images*/ ctx[2]) if_block.p(ctx, dirty);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(if_block);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(if_block);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
-    			if (if_block) if_block.d();
+    			destroy_component(imagecarousel);
     		}
     	};
 
@@ -1114,7 +1086,7 @@ var app = (function () {
             title: "Pi Day 2021",
             description: "This project was a small celebration of Pi Day on 3/14/2021. It illustrates the limiting behavior of the Archimedes method of approximating pi, which involves calculating the circumference of a regular polygon inscribed in a circle. As the number of sides increases, the circumference approaches that of the circle, from which pi can be extracted.",
             images: [
-                "images/pi-day/pi-day-cap.png",
+                "images/pi-day/pi-day-cap.jpg",
             ],
         },
         {
@@ -1216,11 +1188,11 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(h1, "class", "svelte-onnsj6");
+    			attr_dev(h1, "class", "svelte-15fphc5");
     			add_location(h1, file, 5, 1, 120);
     			attr_dev(div, "id", "projects");
     			add_location(div, file, 6, 1, 141);
-    			attr_dev(main, "class", "svelte-onnsj6");
+    			attr_dev(main, "class", "svelte-15fphc5");
     			add_location(main, file, 4, 0, 112);
     		},
     		l: function claim(nodes) {
