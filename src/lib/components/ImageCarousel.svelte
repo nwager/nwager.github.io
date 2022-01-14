@@ -24,7 +24,7 @@
 <div class="carousel" on:mouseleave={hideUiTimer} on:mouseenter={showUiTimer}>
   {#each images as img, i}
     <a href="{base}/{img}" class={classNames({active: i == currIdx})}>
-      <img src={img} alt="Carousel" />
+      <img src="{base}/{img}" alt="Carousel" />
     </a>
   {/each}
   {#if numImgs > 1}
