@@ -1,2 +1,9 @@
 $medium-width: 767px;
 $narrow-width: 640px;
+
+$navbar-height: 3rem;
+
+@mixin Noah-Bold {
+  font-family: 'Noah-Bold', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
