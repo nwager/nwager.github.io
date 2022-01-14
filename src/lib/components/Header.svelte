@@ -15,7 +15,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 4px solid #ff3e00;
+    border-bottom: 4px solid $color-theme-red;
     padding: 1em;
     position: relative;
 
@@ -25,13 +25,13 @@
       width: 100%;
       object-fit: cover;
       z-index: -1000;
-      background-color: #326575; // when waiting for img
+      background-color: $color-skyline-blue; // when waiting for img
     }
 
     h1 {
       margin: 0;
-      color: white;
-      text-shadow: 2px 2px #ff3e00;
+      color: $color-white;
+      text-shadow: 2px 2px $color-theme-red;
       font-size: 3.5em;
       @include Noah-Bold;
     }

@@ -1,14 +1,20 @@
 <script lang="ts">
   import { base } from "$app/paths";
+  import { NARROW_WIDTH } from "$lib/utils";
 
   const links = {
     "Projects": "",
     "About": "about",
   };
+
+  let windowWidth;
+  $: titleName = windowWidth < NARROW_WIDTH ? "NW" : "Noah Wager";
 </script>
 
+<svelte:window bind:innerWidth={windowWidth} />
+
 <div id="navbar">
-  <div class="title-name">Noah Wager</div>
+  <a class="title-name" href="{base}/">{titleName}</a>
   {#each Object.entries(links) as [name, link]}
     <a href="{base}/{link}">{name}</a>
   {/each}
@@ -25,19 +31,33 @@
     box-sizing: border-box;
     padding: 0 1em;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 1em;
-    background-color: #c9c9c9;
+    background-color: $color-skyline-blue;
     z-index: 1000;
-    color: black;
     font-size: calc(#{$navbar-height} / 2);
-
+    
     a {
-      color: black;
+      @include Noah-Bold;
+      color: $color-white;
+      text-shadow: 1px 1px $color-theme-red;
+      
+      &:hover {
+        text-decoration: none;
+        color: $color-theme-red;
+        text-shadow: 1px 1px $color-white;
+      }
+
+      &.title-name {
+        margin-right: auto;
+      }
     }
 
-    .title-name {
-      margin-right: auto;
-    }
+    // @media (max-width: $narrow-width) {
+    //   .title-name {
+    //     display: none;
+    //   }
+    // }
   }
 </style>

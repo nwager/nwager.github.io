@@ -67,10 +67,10 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -800;
+      display: none;
         
       &.active {
-          z-index: -700;
+        display: block;
       }
 
       img {

@@ -1,6 +1,5 @@
 <script lang="ts">
   import Header from "$lib/components/Header.svelte";
-  import Nav from "$lib/components/Nav.svelte";
   import Project from "$lib/components/Project.svelte";
   import { projects } from "./_project-data";
 </script>

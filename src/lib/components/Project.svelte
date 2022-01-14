@@ -41,7 +41,7 @@
       --spacing: 5em;
 
       .text-container {
-        background-color: #f3f3f3;
+        background-color: $color-light-gray;
 
         h2 {
           font-family: 'Noah-Bold';

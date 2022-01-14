@@ -1,5 +1,5 @@
 $medium-width: 767px;
-$narrow-width: 640px;
+$narrow-width: 640px; // $lib/utils.ts NARROW_WIDTH
 
 $navbar-height: 3rem;
 
@@ -7,3 +7,9 @@ $navbar-height: 3rem;
   font-family: 'Noah-Bold', Arial, Helvetica, sans-serif;
   font-weight: bold;
 }
+
+//colors
+$color-theme-red: #ff3e00;
+$color-light-gray: #f3f3f3;
+$color-white: #fff;
+$color-skyline-blue: #326575; // average-ish color of pdx skyline img
