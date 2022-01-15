@@ -48,6 +48,7 @@
 
     .text-container {
       padding: 1em;
+      padding-bottom: 0.5em;
       margin: 0;
       text-align: left;
       
@@ -69,6 +70,7 @@
           // larger click area
           padding: 0.5em 2em;
           padding-left: 0;
+          font-size: 1.1em;
 
           @media (max-width: $medium-width) {
             white-space: nowrap;

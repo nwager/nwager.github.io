@@ -2,15 +2,17 @@
 	import { base } from "$app/paths";
 	import CenterContainer from "$lib/components/CenterContainer.svelte";
   import Header from "$lib/components/Header.svelte";
+import { text } from "svelte/internal";
 
 	const contacts = [
 		{
 			icon: "envelope-fill",
-			link: "noahwager@gmail.com",
+			text: "noahwager@gmail.com",
 		},
 		{
 			icon: "linkedin",
-			link: "linkedin.com/in/noah-wager",
+			text: "linkedin.com/in/noah-wager",
+			link: "https://www.linkedin.com/in/noah-wager",
 		},
 	]
 </script>
@@ -30,10 +32,14 @@
 					I am a junior in Computer Engineering at the University of Washington, Seattle. In addition to working with software and hardware, I like playing electric bass and guitar, with an almost-negligible amount of drums and piano.
 				</p>
 				<h2>Contact</h2>
-				{#each contacts as {icon, link}}
+				{#each contacts as {icon, text, link}}
 					<div class="contact-item">
 						<span class="icon icon-{icon}" />
-						<a href={link}>{link}</a>
+						{#if link}
+							<a href={link}>{text}</a>
+						{:else}
+							<span>{text}</span>
+						{/if}
 					</div>
 				{/each}
 			</div>
