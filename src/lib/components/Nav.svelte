@@ -1,10 +1,11 @@
 <script lang="ts">
   import { base } from "$app/paths";
+  import { page } from "$app/stores";
   import { NARROW_WIDTH } from "$lib/utils";
 
   const links = {
-    "Projects": "",
-    "About": "about",
+    "Projects": `${base}/`,
+    "About": `${base}/about`,
   };
 
   let windowWidth;
@@ -16,11 +17,12 @@
 <div id="navbar">
   <a class="title-name" href="{base}/">{titleName}</a>
   {#each Object.entries(links) as [name, link]}
-    <a href="{base}/{link}">{name}</a>
+    <a class:active={$page.url.pathname === link} href={link}>{name}</a>
   {/each}
 </div>
 
 <style lang="scss">
+  // change navbar-height here
   @import "src/lib/style/variables.scss";
 
   #navbar {
@@ -36,17 +38,22 @@
     gap: 1em;
     background-color: $color-skyline-blue;
     z-index: 1000;
-    font-size: calc(#{$navbar-height} / 2);
+    font-size: calc(#{$navbar-height} / 2.3);
+    box-shadow: 0 1px 5px rgb(0 0 0 / 57%);
     
     a {
       @include Noah-Bold;
       color: $color-white;
       text-shadow: 1px 1px $color-theme-red;
-      
-      &:hover {
-        text-decoration: none;
-        color: $color-theme-red;
-        text-shadow: 1px 1px $color-white;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+
+      &.active {
+        $border-width: 0.2em;
+        border-top: $border-width solid transparent;
+        border-bottom: $border-width solid $color-theme-red;
       }
 
       &.title-name {
@@ -54,10 +61,12 @@
       }
     }
 
-    // @media (max-width: $narrow-width) {
-    //   .title-name {
-    //     display: none;
-    //   }
-    // }
+    @media (hover: hover) {
+      a:hover {
+        text-decoration: none;
+        color: $color-theme-red;
+        text-shadow: 1px 1px $color-white;
+      }
+    }
   }
 </style>

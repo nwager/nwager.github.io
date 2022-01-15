@@ -22,9 +22,6 @@
 <style lang="scss">
   @import "src/lib/style/variables.scss";
 
-  $small-spacing: 1em;
-  $large-spacing: 5em;
-
   // mobile
   .project {
     --spacing: 2em;
@@ -44,7 +41,7 @@
         background-color: $color-light-gray;
 
         h2 {
-          font-family: 'Noah-Bold';
+          @include Noah-Bold;
         }
       }
     }
@@ -52,7 +49,6 @@
     .text-container {
       padding: 1em;
       margin: 0;
-      font-size: 1.1em;
       text-align: left;
       
       h2 {
@@ -64,18 +60,15 @@
       }
 
       .link-container {
-        margin-top: 1em;
+        margin-top: 0.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
 
         a {
-          display: block;
-
-          &::after {
-            content: " →";
-          }
-          
-          &:not(:last-child) {
-            margin-bottom: 1em;
-          }
+          // larger click area
+          padding: 0.5em 2em;
+          padding-left: 0;
 
           @media (max-width: $medium-width) {
             white-space: nowrap;

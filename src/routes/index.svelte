@@ -1,41 +1,23 @@
 <script lang="ts">
-  import Header from "$lib/components/Header.svelte";
+  import CenterContainer from "$lib/components/CenterContainer.svelte";
+import Header from "$lib/components/Header.svelte";
   import Project from "$lib/components/Project.svelte";
   import { projects } from "./_project-data";
 </script>
 
+<svelte:head>
+  <title>Noah Wager - Projects</title>
+</svelte:head>
+
 <section>
-	<Header />
+	<Header header="Projects" />
 	<div id="content">
-		<div id="projects">
-			{#each projects as proj}
-				<Project project={proj} />
-			{/each}
-		</div>
+		<CenterContainer>
+			<div id="projects" style="overflow:hidden">
+				{#each projects as proj}
+					<Project project={proj} />
+				{/each}
+			</div>
+		</CenterContainer>
 	</div>
 </section>
-
-<style lang="scss">
-	@import "src/lib/style/variables.scss";
-
-	// mobile
-	section {
-		text-align: center;
-		width: 100%;
-
-		#content {
-			width: 100%;
-		}
-	}
-
-	// desktop
-	@media (min-width: $medium-width) {
-		section {
-      #content {
-        margin: 0 auto;
-				width: 70vw;
-				max-width: 60em;
-			}
-		}
-	}
-</style>

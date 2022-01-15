@@ -1,17 +1,24 @@
 <script lang=ts>
   import { base } from "$app/paths";
+
+  export let header = '';
 </script>
 
 <div id="header">
   <img src="{base}/images/pdx-banner.jpg" alt="Portland skyline" />
-  <h1>Noah Wager</h1>
+  <div class="text-container">
+    <h1>Noah Wager</h1>
+    {#if header}
+      <h2>{header}</h2>
+    {/if}
+  </div>
 </div>
 
 <style lang="scss">
   @import "src/lib/style/variables.scss";
 
   #header {
-    min-height: 7em;
+    min-height: 9em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,21 +35,40 @@
       background-color: $color-skyline-blue; // when waiting for img
     }
 
-    h1 {
-      margin: 0;
-      color: $color-white;
-      text-shadow: 2px 2px $color-theme-red;
-      font-size: 3.5em;
+    .text-container {
       @include Noah-Bold;
+      color: $color-white;
+
+      h1 {
+        margin: 0;
+        font-size: 3.5em;
+        text-shadow: 0.04em 0.04em $color-theme-red;
+        letter-spacing: -2px;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 1.5em;
+        text-shadow: 0.05em 0.05em $color-theme-red;
+      }
     }
   }
 
+  // desktop
   @media (min-width: $medium-width) {
     #header {
       min-height: 12em;
 
-      h1 {
-        font-size: 6em;
+      .text-container {
+        h1 {
+          font-size: 6em;
+          text-shadow: 0.03em 0.03em $color-theme-red;
+          letter-spacing: inherit;
+        }
+        
+        h2 {
+          font-size: 2em;
+        }
       }
     }
 	}

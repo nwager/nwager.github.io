@@ -23,7 +23,11 @@
 
 <div class="carousel" on:mouseleave={hideUiTimer} on:mouseenter={showUiTimer}>
   {#each images as img, i}
-    <a href="{base}/{img}" class={classNames({active: i == currIdx})}>
+    <a
+      class={classNames({active: i == currIdx})}
+      href="{base}/{img}"
+      rel="external"
+    >
       <img src="{base}/{img}" alt="Carousel" />
     </a>
   {/each}
@@ -68,6 +72,7 @@
       width: 100%;
       height: 100%;
       display: none;
+      cursor: default;
         
       &.active {
         display: block;
