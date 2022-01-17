@@ -1,0 +1,88 @@
+{
+  ".svelte-kit/build/runtime/internal/start.js": {
+    "file": "start-8d1b155b.js",
+    "src": ".svelte-kit/build/runtime/internal/start.js",
+    "isEntry": true,
+    "imports": [
+      "_vendor-1a6036f3.js",
+      "_paths-28a87002.js"
+    ],
+    "dynamicImports": [
+      "src/routes/__layout.svelte",
+      ".svelte-kit/build/components/error.svelte",
+      "src/routes/index.svelte",
+      "src/routes/about.svelte"
+    ]
+  },
+  "src/routes/__layout.svelte": {
+    "file": "pages/__layout.svelte-95835af3.js",
+    "src": "src/routes/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-1a6036f3.js",
+      "_paths-28a87002.js",
+      "_utils-4e47eca2.js"
+    ],
+    "css": [
+      "assets/pages/__layout.svelte-82e72fe3.css"
+    ]
+  },
+  ".svelte-kit/build/components/error.svelte": {
+    "file": "error.svelte-d5aa5dc8.js",
+    "src": ".svelte-kit/build/components/error.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-1a6036f3.js"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "pages/index.svelte-32d7432c.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-1a6036f3.js",
+      "_Header-29daeac7.js",
+      "_utils-4e47eca2.js",
+      "_paths-28a87002.js"
+    ],
+    "css": [
+      "assets/pages/index.svelte-cd633b7c.css"
+    ]
+  },
+  "src/routes/about.svelte": {
+    "file": "pages/about.svelte-f4deb976.js",
+    "src": "src/routes/about.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-1a6036f3.js",
+      "_paths-28a87002.js",
+      "_Header-29daeac7.js"
+    ],
+    "css": [
+      "assets/pages/about.svelte-34ea78bc.css"
+    ]
+  },
+  "_vendor-1a6036f3.js": {
+    "file": "chunks/vendor-1a6036f3.js"
+  },
+  "_paths-28a87002.js": {
+    "file": "chunks/paths-28a87002.js"
+  },
+  "_utils-4e47eca2.js": {
+    "file": "chunks/utils-4e47eca2.js"
+  },
+  "_Header-29daeac7.js": {
+    "file": "chunks/Header-29daeac7.js",
+    "imports": [
+      "_vendor-1a6036f3.js",
+      "_paths-28a87002.js"
+    ],
+    "css": [
+      "assets/Header-ab25e998.css"
+    ]
+  }
+}
