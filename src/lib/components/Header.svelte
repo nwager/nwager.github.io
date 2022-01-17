@@ -6,7 +6,11 @@
 </script>
 
 <div id="header">
-  <GithubCorner cornerColor={"white"} octoColor={"black"} />
+  <GithubCorner
+    url={"https://github.com/nwager"}
+    cornerColor={"white"}
+    octoColor={"black"}
+  />
   <img src="{base}/images/pdx-banner.jpg" alt="Portland skyline" />
   <div class="text-container">
     <h1>Noah Wager</h1>

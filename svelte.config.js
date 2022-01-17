@@ -1,7 +1,8 @@
 import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 
-const dev = process.env.NODE_ENV === 'development';
+// Since it's on nwager.github.io root, it doesn't need a path
+// const dev = process.env.NODE_ENV === 'development';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -16,7 +17,7 @@ const config = {
 		target: '#svelte',
 
 		paths: {
-			base: dev ? '' : '/sk-test',
+			base: '',
 		},
 	}
 };
