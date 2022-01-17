@@ -7,6 +7,4 @@ export function mod(n, m) {
   return ((n % m) + m) % m;
 }
 
-export const NARROW_WIDTH = 640; // $lib/style/variables.scss $narrow-width
-
 export default {};

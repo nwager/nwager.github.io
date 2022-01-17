@@ -1,7 +1,7 @@
 <script lang="ts">
   import { base } from "$app/paths";
   import { page } from "$app/stores";
-  import { NARROW_WIDTH } from "$lib/utils";
+  import { NARROW_WIDTH } from "$lib/style/variables";
 
   const links = {
     "Projects": `${base}/`,
