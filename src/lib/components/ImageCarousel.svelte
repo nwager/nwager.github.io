@@ -4,6 +4,7 @@
   import { base } from "$app/paths";
 
   export let images: NonemptyArray<string>;
+  export let linkImages = false;
 
   let currIdx = 0;
   const numImgs = images.length;
@@ -25,8 +26,10 @@
   {#each images as img, i}
     <a
       class={classNames({active: i == currIdx})}
-      href="{base}/{img}"
+      href={`${base}/${img}`}
       rel="external"
+      target="_blank"
+      style={!linkImages ? "pointer-events:none" : ""}
     >
       <img src="{base}/{img}" alt="Carousel" />
     </a>
@@ -59,18 +62,8 @@
   .carousel {
     width: 100%;
     position: relative;
-    aspect-ratio: 4 / 3;
-
-    // desktop
-    @media (min-width: $narrow-width) {
-      aspect-ratio: 16 / 9;
-    }
 
     a {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 100%;
       display: none;
       cursor: default;
         
@@ -81,16 +74,13 @@
       img {
         height: 100%;
         width: 100%;
-        object-fit: cover;
+        display: block;
+        object-fit: contain;
       }
     }
 
     .carousel-ui {
       transition: opacity 200ms ease;
-      
-      &.hidden {
-        opacity: 0;
-      }
 
       .carousel-button {
         position: absolute;
@@ -175,5 +165,11 @@
       }
     }
 
+    // desktop
+    @media (min-width: $narrow-width) {
+      .carousel-ui.hidden {
+        opacity: 0;
+      }
+    }
   }
 </style>

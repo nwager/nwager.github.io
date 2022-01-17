@@ -4,6 +4,7 @@
 
   export let project: ProjectData;
   let {title, description, images, links} = project;
+  
 </script>
 
 <div class="project">
@@ -13,7 +14,7 @@
     <p class={"description"}>{description}</p>
     <div class="link-container">
       {#each links as [text, href]}
-        <a href={href}>{text}</a>
+        <a href={href} target="_blank">{text}</a>
       {/each}
     </div>
   </div>
@@ -76,8 +77,6 @@
             white-space: nowrap;
             width: min-content;
             padding: 0.4em;
-            background-color: #ebebeb;
-            border-radius: 0.3em;
           }
         }
       }
