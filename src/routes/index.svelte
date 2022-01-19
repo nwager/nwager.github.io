@@ -1,6 +1,6 @@
 <script lang="ts">
   import CenterContainer from "$lib/components/CenterContainer.svelte";
-import Header from "$lib/components/Header.svelte";
+	import Header from "$lib/components/Header.svelte";
   import Project from "$lib/components/Project.svelte";
   import { projects } from "./_project-data";
 </script>
@@ -11,13 +11,11 @@ import Header from "$lib/components/Header.svelte";
 
 <section>
 	<Header header="Projects" />
-	<div id="content">
-		<CenterContainer>
-			<div id="projects" style="overflow:hidden">
-				{#each projects as proj}
-					<Project project={proj} />
-				{/each}
-			</div>
-		</CenterContainer>
-	</div>
+	<CenterContainer>
+		<div id="projects">
+			{#each projects as proj}
+				<Project project={proj} />
+			{/each}
+		</div>
+	</CenterContainer>
 </section>

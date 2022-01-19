@@ -40,6 +40,15 @@
     z-index: 1000;
     font-size: calc(#{$navbar-height} / 2.3);
     box-shadow: 0 1px 5px rgb(0 0 0 / 57%);
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: calc(0.9 * #{$navbar-height});
+      background-color: $color-skyline-blue;
+      height: 300px;
+      width: 100%;
+    }
     
     a {
       @include Noah-Bold;

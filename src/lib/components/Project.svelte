@@ -37,6 +37,7 @@
       overflow: hidden;
       border-radius: 10px;
       --spacing: 5em;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
       .text-container {
         background-color: $color-light-gray;
@@ -77,6 +78,7 @@
             white-space: nowrap;
             width: min-content;
             padding: 0.4em;
+            padding-left: 0;
           }
         }
       }

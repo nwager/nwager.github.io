@@ -12,6 +12,6 @@
   @import "src/lib/style/variables.scss";
 
   main {
-    margin-top: $navbar-height;
+    padding-top: $navbar-height;
   }
 </style>
