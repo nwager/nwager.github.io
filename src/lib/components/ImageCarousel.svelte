@@ -27,7 +27,7 @@
     <a
       class={classNames({active: i == currIdx})}
       href={`${base}/${img}`}
-      rel="external"
+      rel="external noopener"
       target="_blank"
       style={!linkImages ? "pointer-events:none" : ""}
     >

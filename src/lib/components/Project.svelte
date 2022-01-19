@@ -14,7 +14,7 @@
     <p class={"description"}>{description}</p>
     <div class="link-container">
       {#each links as [text, href]}
-        <a href={href} target="_blank">{text}</a>
+        <a href={href} target="_blank" rel="noopener">{text}</a>
       {/each}
     </div>
   </div>
