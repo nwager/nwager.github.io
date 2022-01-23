@@ -7,6 +7,7 @@
 		{
 			icon: "envelope-fill",
 			text: "noahwager@gmail.com",
+			link: "mailto:noahwager@gmail.com",
 		},
 		{
 			icon: "linkedin",
@@ -34,7 +35,7 @@
 				<div class="contact-item">
 					<span class="icon icon-{icon}" />
 					{#if link}
-						<a href={link}>{text}</a>
+						<a href={link} target="_blank" rel="noopener">{text}</a>
 					{:else}
 						<span>{text}</span>
 					{/if}
