@@ -19,6 +19,17 @@ export const projects: ProjectData[] = [
     ],
   },
   {
+    title: "React + ThreeJS Demo",
+    description: "I created a website using Create React App and ThreeJS to practice using React and WebGL. It's a simple website meant to demonstrate the integration of a dynamic ThreeJS scene with functional UI elements. The scene features a whale swimming in circles through randomly-positioned rings, accompanied by overlayed text, links, and a contact form.",
+    images: [
+      "images/matterport/mp-menu-marked-1024.jpg"
+    ],
+    links: [
+      ["Website", "https://nwager.github.io/react-threejs/"],
+      ["GitHub", "https://github.com/nwager/react-threejs"],
+    ],
+  },
+  {
     title: "DIY Fume Extractor",
     description: "I designed a case for a fan and carbon filter in Fusion 360 and then 3D-printed it. My DIY soldering station needed ventilation, and it just so happens that used computer fans are fairly inexpensive.",
     images: [
