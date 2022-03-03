@@ -15,14 +15,15 @@ export const projects: ProjectData[] = [
       "images/matterport/mp-menu-marked-1024.jpg"
     ],
     links: [
-      ["View this model", "https://my.matterport.com/show/?m=CRg23STmKZp"]
+      ["View this space", "https://my.matterport.com/show/?m=CRg23STmKZp"]
     ],
   },
   {
     title: "React + ThreeJS Demo",
     description: "I created a website using Create React App and ThreeJS to practice using React and WebGL. It's a simple website meant to demonstrate the integration of a dynamic ThreeJS scene with functional UI elements. The scene features a whale swimming in circles through randomly-positioned rings, accompanied by overlayed text, links, and a contact form.",
     images: [
-      "images/matterport/mp-menu-marked-1024.jpg"
+      "images/r3js/r3js-main-1024.jpg",
+      "images/r3js/r3js-contact-1024.jpg",
     ],
     links: [
       ["Website", "https://nwager.github.io/react-threejs/"],
