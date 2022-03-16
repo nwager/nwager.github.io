@@ -9,10 +9,20 @@ export interface ProjectData {
 
 export const projects: ProjectData[] = [
   {
-    title: "Matterport UI Panel",
-    description: "I interned at Matterport in summer 2021, where I worked on the front-end web-app team. I was able to write and push code to the production codebase, and one of my additions was the new title panel. Previously, the title was a small box in the top corner, so it was redesigned to fit with the style of the other panels.",
+    title: "Matterport Space Search",
+    description: "I interned at Matterport in summer 2021, where I worked on the front-end web-app team. I was able to write and push code to the production codebase, and my summer-long project was to design and implement the prototype for a new feature called Space Search. Users can search and filter through a space's Mattertags, room labels, etc. to better navigate and organize spacial data.",
     images: [
-      "images/matterport/mp-menu-marked-1024.jpg"
+      "images/mp-sps/sps-ewf-1024.jpg"
+    ],
+    links: [
+      ["View this space", "https://my.matterport.com/show/?m=ugH9NdUC3aC"]
+    ],
+  },
+  {
+    title: "Matterport UI Panel",
+    description: "Another one of my Matterport additions was the new title panel. Previously, the title was a small box in the top corner, so it was redesigned to fit with the style of the other panels. This new panel shows a preview image of the space and summarizing information about the space and owners.",
+    images: [
+      "images/mp-title/mp-menu-marked-1024.jpg"
     ],
     links: [
       ["View this space", "https://my.matterport.com/show/?m=CRg23STmKZp"]
