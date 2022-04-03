@@ -15,7 +15,7 @@ export const projects: ProjectData[] = [
       "images/mp-sps/sps-ewf-1024.jpg"
     ],
     links: [
-      ["View this space", "https://my.matterport.com/show/?m=ugH9NdUC3aC"]
+      ["View this space", "https://my.matterport.com/show/?m=ugH9NdUC3aC&q=september"]
     ],
   },
   {
