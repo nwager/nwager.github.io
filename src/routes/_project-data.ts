@@ -1,4 +1,4 @@
-import type { NonemptyArray } from "$lib/utils";
+import type { NonemptyArray } from "$lib/types";
 
 export interface ProjectData {
   title: string;

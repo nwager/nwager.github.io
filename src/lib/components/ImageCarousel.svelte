@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { mod, NonemptyArray } from "$lib/utils";
+  import { mod } from "$lib/utils";
+  import type { NonemptyArray } from "$lib/types";
   import classNames from "classnames";
   import { base } from "$app/paths";
 
