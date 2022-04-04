@@ -23,12 +23,24 @@
 
 <section>
 	<Header header="About" />
-	<CenterContainer styles={{"target-width": "50vw", "min-width": "35em"}}>
+	<CenterContainer styles={{"target-width": "50vw", "min-width": "50ch", "max-width": "75ch"}}>
 		<img src="{base}/images/face.png" alt="My face" />
 		<div class="bio">
 			<h2>About Me</h2>
 			<p>
-				I am a junior in Computer Engineering at the University of Washington, Seattle. In addition to working with software and hardware, I like playing electric bass and guitar, with an almost-negligible amount of drums and piano.
+				I am a 3rd-year student in Computer Engineering at the University of Washington, Seattle (UW). I have experience in both software and hardware roles, with skills in front-end development and electronics.
+			</p>
+
+			<h2>Design, Build, Fly</h2>
+			<p>
+				I'm an active member of <a href="https://www.designbuildflyuw.com/" target="_blank" rel="noopener">Design, Build, Fly UW</a>, an engineering club at UW. Dozens of students collaborate in subteams to design and manufacture a mid-size RC airplane to compete with other schools in a <a href="https://www.aiaa.org/dbf" target="_blank" rel="noopener">competition hosted by the AIAA</a>.
+				<br/>
+				As a member of the Avionics team, I am responsible for creating wiring schematics, assembling and soldering electrical components, and installing the flight controller and control surfaces.
+			</p>
+
+			<h2>Music</h2>
+			<p>
+				When I'm not working on projects, I spend much of my free time playing electric bass and guitar. I started on bass in 2012 and began learning guitar in high school, playing covers at School of Rock, Portland. I currently play bass for <a href="https://thesleepyhaunts.com/home/" target="_blank" rel="noopener">The Sleepy Haunts</a>, an indie-pop band with rock influence.
 			</p>
 			<h2>Contact</h2>
 			{#each contacts as {icon, text, link}}
@@ -59,6 +71,14 @@
 
 		h2 {
 			@include Noah-Bold;
+		}
+
+		p {
+			br {
+				display: block;
+				content: "";
+				margin-top: 1em;
+			}
 		}
 
 		.contact-item {
