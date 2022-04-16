@@ -24,7 +24,7 @@
 <section>
 	<Header header="About" />
 	<CenterContainer styles={{"target-width": "50vw", "min-width": "50ch", "max-width": "75ch"}}>
-		<img src="{base}/images/face.png" alt="My face" />
+		<img class="myface" src="{base}/images/about/face.png" alt="My face" />
 		<div class="bio">
 			<h2>About Me</h2>
 			<p>
@@ -32,11 +32,18 @@
 			</p>
 
 			<h2>Design, Build, Fly</h2>
+			
 			<p>
 				I'm an active member of <a href="https://www.designbuildflyuw.com/" target="_blank" rel="noopener">Design, Build, Fly UW</a>, an engineering club at UW. Dozens of students collaborate in subteams to design and manufacture a mid-size RC airplane to compete with other schools in a <a href="https://www.aiaa.org/dbf" target="_blank" rel="noopener">competition hosted by the AIAA</a>.
 				<br/>
 				As a member of the Avionics team, I am responsible for creating wiring schematics, assembling and soldering electrical components, and installing the flight controller and control surfaces.
 			</p>
+			<figure>
+				<a class="image-link" href="{base}/images/about/uw22albatross.jpeg" target="_blank" rel="noopener">
+					<img src="{base}/images/about/uw22albatross-1024.jpeg" alt="DBF plane 2022: UW-22 Albatross" />
+				</a>
+				<figcaption>Our plane for the 2022 competition: the UW-22 Albatross.</figcaption>
+			</figure>
 
 			<h2>Music</h2>
 			<p>
@@ -60,7 +67,7 @@
 <style lang="scss">
 	@import "src/lib/style/variables.scss";
 
-	img {
+	.myface {
 		margin-top: 2em;
 	}
 
@@ -78,6 +85,23 @@
 				display: block;
 				content: "";
 				margin-top: 1em;
+			}
+		}
+
+		figure {
+			margin: 0;
+
+			.image-link {
+				cursor: default;
+				
+				img {
+					width: 100%;
+				}
+			}
+
+			figcaption {
+				font-style: italic;
+				text-align: center;
 			}
 		}
 
