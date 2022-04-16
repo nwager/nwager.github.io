@@ -23,11 +23,13 @@
 <style lang="scss">
   @import "src/lib/style/variables.scss";
 
-  // mobile
   .project {
-    --spacing: 2em;
+    --spacing: 3em;
     margin-top: var(--spacing);
     background-color: $color-light-gray;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
     &:last-child {
       margin-bottom: var(--spacing);
@@ -35,15 +37,10 @@
 
     // desktop
     @media (min-width: $medium-width) {
-      overflow: hidden;
-      border-radius: 10px;
       --spacing: 5em;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
-      .text-container {
-        h2 {
-          @include Noah-Bold;
-        }
+      .text-container h2 {
+        @include Noah-Bold; // font doesn't look good on mobile
       }
     }
 

@@ -32,7 +32,6 @@
 <style lang="scss">
 	@import "src/lib/style/variables.scss";
 
-	// mobile
   .center-container {
     width: 100%;
     display: flex;
@@ -40,6 +39,10 @@
     align-items: center;
     overflow: hidden;
     background-color: var(--background-color);
+
+    .content {
+      width: calc(100% - 2.5em);
+    }
   }
 
 	// desktop

@@ -5,18 +5,34 @@
   import { base } from "$app/paths";
 
   export let images: NonemptyArray<string>;
-  export const LINK_IMAGES = false;
+  export let linkImages = false;
 
   let currIdx = 0;
   const numImgs = images.length;
   let hideUi = true;
 
+  enum SlideState {
+    NONE,
+    SLIDE_TO_PREV,
+    SLIDE_TO_NEXT,
+  }
+  let transitionState: SlideState = SlideState.NONE;
+
   // takes target image index, returns function that changes image
   // this allows it to be used as a callback while taking a param
   // https://stackoverflow.com/a/45448802
-  const changeImage = (target: number) => _ => {
-    currIdx = target;
-    currIdx = mod(currIdx, numImgs);
+  const changeImage = (target: number) => () => {
+    if (transitionState != SlideState.NONE) return;
+    if (target == mod(currIdx - 1, numImgs)) {
+      transitionState = SlideState.SLIDE_TO_PREV;
+    } else if (target == mod(currIdx + 1, numImgs)) {
+      transitionState = SlideState.SLIDE_TO_NEXT
+    }
+    setTimeout(() => {
+      currIdx = target;
+      currIdx = mod(currIdx, numImgs);
+      transitionState = SlideState.NONE;
+    }, 2000);
   }
 
   const hideUiTimer = () => hideUi = true;
@@ -24,17 +40,27 @@
 </script>
 
 <div class="carousel" on:mouseleave={hideUiTimer} on:mouseenter={showUiTimer}>
-  {#each images as img, i}
-    <a
-      class={classNames({active: i == currIdx})}
-      href={`${base}/${img}`}
-      rel="external noopener"
-      target="_blank"
-      style={LINK_IMAGES ? "cursor:pointer" : "pointer-events:none"}
-    >
-      <img src="{base}/{img}" alt="Carousel" />
-    </a>
-  {/each}
+  <div class="carousel-images">
+    {#each images as img, i}
+      <a
+        class={classNames(
+          {
+            active: i == currIdx,
+            prev: i == mod(currIdx - 1, numImgs),
+            next: i == mod(currIdx + 1, numImgs),
+            "slide-to-prev": transitionState == SlideState.SLIDE_TO_PREV,
+            "slide-to-next": transitionState == SlideState.SLIDE_TO_NEXT,
+          }
+        )}
+        href={`${base}/${img}`}
+        rel="external noopener"
+        target="_blank"
+        style={linkImages ? "cursor:pointer" : "pointer-events:none"}
+      >
+        <img src="{base}/{img}" alt="Carousel" />
+      </a>
+    {/each}
+  </div>
   {#if numImgs > 1}
     <div class={classNames("carousel-ui", {hidden: hideUi})}>
       <div class="carousel-button prev" on:click={changeImage(currIdx - 1)}>
@@ -63,20 +89,48 @@
   .carousel {
     width: 100%;
     position: relative;
-    background-color: transparent; // $color-light-gray;
 
-    a {
-      display: none;
-        
-      &.active {
-        display: block;
-      }
+    .carousel-images {
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
 
-      img {
-        height: 100%;
-        width: 100%;
-        display: block;
-        object-fit: contain;
+      a {
+        // flex-shrink: 0;
+        transition: transform 2000ms ease;
+        display: none;
+          
+        &.active {
+          display: block;
+
+          &.slide-to-prev {
+            transform: translateX(100%);
+          }
+
+          &.slide-to-next {
+            transform: translateX(-100%);
+          }
+        }
+  
+        &.prev {
+          &.slide-to-prev {
+            display: block;
+            // transform: translateX(100%)
+          }
+        }
+  
+        &.next {
+          &.slide-to-next {
+            display: block;
+            // transform: translateX(-100%)
+          }
+        }
+  
+        img {
+          width: 100%;
+          display: block;
+        }
       }
     }
 
