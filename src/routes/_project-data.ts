@@ -78,7 +78,7 @@ export const projects: ProjectData[] = [
   },
   {
     title: "Music Maker",
-    description: "This is a virtual synth I put together using HTML/CSS/JS for my Personal Learning Experience in my junior year Theory of Knowledge class. My objective was to learn a JavaScript project, and a synth seemed to adequately combine my interest in music and programming.",
+    description: "This is a virtual synth I put together using HTML/CSS/JS for my Personal Learning Experience in my junior year Theory of Knowledge class in high school. My objective was to learn a JavaScript project, and a synth seemed to adequately combine my interest in music and programming.",
     images: [
       "images/music-maker/music-maker-cap-1024.jpg",
     ],
@@ -89,7 +89,7 @@ export const projects: ProjectData[] = [
   },
   {
     title: "CS IA - Circular Motion",
-    description: "IA stands for Internal Assessment, which is a large project required by the International Baccalaureate. For my CS IA in senior year, I made a website containing simulations of uniform circular motion using JS canvas. As well as programming, the project included design processes and documentation.",
+    description: "IA stands for Internal Assessment, which is a large project required by the International Baccalaureate. For my CS IA in my senior year of high school, I made a website containing simulations of uniform circular motion using JS canvas. As well as programming, the project included design processes and documentation.",
     images: [
       "images/circular-motion/csia-circle-1024.jpg",
       "images/circular-motion/csia-turntable-1024.jpg",

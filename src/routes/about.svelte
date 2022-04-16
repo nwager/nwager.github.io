@@ -28,7 +28,7 @@
 		<div class="bio">
 			<h2>About Me</h2>
 			<p>
-				I am a 3rd-year student in Computer Engineering at the University of Washington, Seattle (UW). I have experience in both software and hardware roles, with skills in front-end development and electronics.
+				I am a third-year student in Computer Engineering at the University of Washington, Seattle (UW). I have experience in both software and hardware roles, with skills in front-end development and electronics.
 			</p>
 
 			<h2>Design, Build, Fly</h2>
