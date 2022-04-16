@@ -5,7 +5,7 @@
   import { base } from "$app/paths";
 
   export let images: NonemptyArray<string>;
-  export let linkImages = false;
+  export const LINK_IMAGES = false;
 
   let currIdx = 0;
   const numImgs = images.length;
@@ -30,7 +30,7 @@
       href={`${base}/${img}`}
       rel="external noopener"
       target="_blank"
-      style={!linkImages ? "pointer-events:none" : ""}
+      style={LINK_IMAGES ? "cursor:pointer" : "pointer-events:none"}
     >
       <img src="{base}/{img}" alt="Carousel" />
     </a>
@@ -63,10 +63,10 @@
   .carousel {
     width: 100%;
     position: relative;
+    background-color: transparent; // $color-light-gray;
 
     a {
       display: none;
-      cursor: default;
         
       &.active {
         display: block;
@@ -81,15 +81,20 @@
     }
 
     .carousel-ui {
-      transition: opacity 200ms ease;
+      $indicator-full-height: 24px;
+      $indicator-collapsed-height: 3px;
+      $indicator-padding-top: 8px;
 
       .carousel-button {
+        transition: opacity 200ms ease;
+
         position: absolute;
-        top: 0; // why do I need this?
-        height: 100%;
+        top: 0;
+        bottom: calc(#{$indicator-full-height} + #{$indicator-padding-top});
         display: flex;
         align-items: center;
         justify-content: center;
+        text-shadow: 0 0 4px rgba(51, 51, 51, 0.606);
         cursor: pointer;
 
         &.prev {
@@ -120,9 +125,7 @@
       }
   
       .indicator-container {
-        position: absolute;
-        bottom: 0;
-        padding-bottom: 10px;
+        padding-top: $indicator-padding-top;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -130,18 +133,18 @@
   
         .indicator {
           $gap: 8px;
-          height: 24px;
+          height: $indicator-full-height;
           width: calc(32px + #{$gap});
           display: flex;
           flex-direction: row;
-          align-items: flex-end;
+          align-items: flex-start;
           overflow: hidden;
   
           cursor: pointer;
           
           .graphic {
-            background-color: #ffffff8c;
-            height: 3px;
+            background-color: rgba($color-skyline-blue, 0.4);
+            height: $indicator-collapsed-height;
             border-radius: 3px;
             width: calc(100% - #{$gap});
             display: flex;
@@ -155,12 +158,11 @@
   
           &:hover .graphic{
             height: 100%;
-            color: black;
-            mix-blend-mode: screen;
+            color: $color-light-gray;
           }
   
           &.active .graphic {
-            background-color: white;
+            background-color: rgba($color-theme-red, 0.9);
           }
         }
       }
@@ -168,7 +170,7 @@
 
     // desktop
     @media (min-width: $narrow-width) {
-      .carousel-ui.hidden {
+      .carousel-ui.hidden .carousel-button {
         opacity: 0;
       }
     }

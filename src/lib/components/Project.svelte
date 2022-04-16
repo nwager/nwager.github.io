@@ -27,6 +27,7 @@
   .project {
     --spacing: 2em;
     margin-top: var(--spacing);
+    background-color: $color-light-gray;
 
     &:last-child {
       margin-bottom: var(--spacing);
@@ -40,8 +41,6 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
       .text-container {
-        background-color: $color-light-gray;
-
         h2 {
           @include Noah-Bold;
         }

@@ -29,6 +29,18 @@ export const projects: ProjectData[] = [
     ],
   },
   {
+    title: "This Website",
+    description: "Built with SvelteKit and hosted by GitHub Pages, this website shows snippets of my personal and professional projects. In addition to sharing my work, creating this site has taught me a great deal about Svelte and SvelteKit, from syntax to routing. After using React's virtual DOM for so many sites and apps, the compiled nature of Svelte is rather refreshing.",
+    images: [
+      "images/portfolio/portfolio-home-1024.jpeg",
+      "images/portfolio/portfolio-carousel-1024.jpeg",
+      "images/portfolio/portfolio-about-1024.jpeg",
+    ],
+    links: [
+      ["GitHub", "https://github.com/nwager/nwager.github.io"],
+    ],
+  },
+  {
     title: "React + ThreeJS Demo",
     description: "I created a website using Create React App and ThreeJS to practice using React and WebGL. It's a simple website meant to demonstrate the integration of a dynamic ThreeJS scene with functional UI elements. The scene features a whale swimming in circles through randomly-positioned rings, accompanied by overlayed text, links, and a contact form.",
     images: [
