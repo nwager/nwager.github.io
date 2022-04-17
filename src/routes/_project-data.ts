@@ -5,6 +5,7 @@ export interface ProjectData {
   description: string;
   images: NonemptyArray<string>;
   links: NonemptyArray<[string, string]>;
+  styleOverride?: string;
 }
 
 export const projects: ProjectData[] = [
@@ -64,6 +65,7 @@ export const projects: ProjectData[] = [
     links: [
       ["More info", "https://github.com/nwager/3dp-fume-extractor-case/"],
     ],
+    styleOverride: "object-position:center",
   },
   {
     title: "Pi Day 2021",

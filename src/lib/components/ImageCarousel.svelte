@@ -6,61 +6,83 @@
 
   export let images: NonemptyArray<string>;
   export let linkImages = false;
+  export let imageStyle: string = "";
 
-  let currIdx = 0;
   const numImgs = images.length;
+  const slidingTime = 400; // transition time for sliding effect in ms
+  let currIdx = 0;
   let hideUi = true;
-
-  enum SlideState {
-    NONE,
-    SLIDE_TO_PREV,
-    SLIDE_TO_NEXT,
-  }
-  let transitionState: SlideState = SlideState.NONE;
 
   // takes target image index, returns function that changes image
   // this allows it to be used as a callback while taking a param
   // https://stackoverflow.com/a/45448802
   const changeImage = (target: number) => () => {
-    if (transitionState != SlideState.NONE) return;
-    if (target == mod(currIdx - 1, numImgs)) {
-      transitionState = SlideState.SLIDE_TO_PREV;
-    } else if (target == mod(currIdx + 1, numImgs)) {
-      transitionState = SlideState.SLIDE_TO_NEXT
-    }
-    setTimeout(() => {
-      currIdx = target;
-      currIdx = mod(currIdx, numImgs);
-      transitionState = SlideState.NONE;
-    }, 2000);
+    currIdx = mod(target, numImgs);
   }
 
-  const hideUiTimer = () => hideUi = true;
-  const showUiTimer = () => hideUi = false;
+  // callbacks to show/hide UI on mouse enter/exit
+  const setUiHidden = () => hideUi = true;
+  const setUiVisible = () => hideUi = false;
+
+  // swipe gesture handling
+  type ClientPos = {x: number, y: number};
+  let swipeStart: ClientPos, swipeEnd: ClientPos, swipeStartTime: number;
+  const onTouchStart = (e: TouchEvent) => {
+    swipeStart = {x: e.touches[0].clientX, y: e.touches[0].clientY};
+    swipeStartTime = e.timeStamp;
+  }
+  const onTouchMove = (e: TouchEvent) => {
+    const pos: ClientPos = {x: e.touches[0].clientX,
+                            y: e.touches[0].clientY};
+    const deltaX = pos.x - swipeStart.x;
+    const deltaT = e.timeStamp - swipeStartTime;
+    // if swipe was fast and horizontal, don't scroll the page
+    // (the carousel eats the touch event)
+    if (Math.abs(deltaX) / (deltaT) > 0.7) {
+      e.preventDefault();
+    }
+  }
+  const onTouchEnd = (e: TouchEvent) => {
+    swipeEnd = {x: e.changedTouches[0].clientX,
+                y: e.changedTouches[0].clientY};
+    const deltaX = swipeEnd.x - swipeStart.x; // px
+    const deltaT = e.timeStamp - swipeStartTime; // ms
+    const dir = deltaX < 0 ? 1 : -1;
+    const noMore = (currIdx == 0 && dir == -1) ||
+                   (currIdx == numImgs - 1 && dir == 1);
+    // only swipe carousel if swipe was far and fast enough
+    // and we're not at the end of the carousel
+    if (!noMore && Math.abs(deltaX) > 60 && deltaT < 300) {
+      currIdx = mod(currIdx + dir, numImgs);
+    }
+  }
 </script>
 
-<div class="carousel" on:mouseleave={hideUiTimer} on:mouseenter={showUiTimer}>
-  <div class="carousel-images">
-    {#each images as img, i}
-      <a
-        class={classNames(
-          {
-            active: i == currIdx,
-            prev: i == mod(currIdx - 1, numImgs),
-            next: i == mod(currIdx + 1, numImgs),
-            "slide-to-prev": transitionState == SlideState.SLIDE_TO_PREV,
-            "slide-to-next": transitionState == SlideState.SLIDE_TO_NEXT,
-          }
-        )}
-        href={`${base}/${img}`}
-        rel="external noopener"
-        target="_blank"
-        style={linkImages ? "cursor:pointer" : "pointer-events:none"}
-      >
-        <img src="{base}/{img}" alt="Carousel" />
-      </a>
+<div
+  class="carousel"
+  on:mouseleave={setUiHidden}
+  on:mouseenter={setUiVisible}
+  on:touchstart={onTouchStart}
+  on:touchend={onTouchEnd}
+  on:touchmove={onTouchMove}
+>
+  <ul
+    class="carousel-inner"
+    style={`--sliding-time:${slidingTime}ms;transform:translateX(-${currIdx*100}%)`}
+  >
+    {#each images as img}
+      <li class="carousel-slide">
+        <a
+          href={`${base}/${img}`}
+          rel="external noopener"
+          target="_blank"
+          style={linkImages ? "cursor:pointer" : "pointer-events:none"}
+        >
+          <img src="{base}/{img}" alt="Carousel" style={imageStyle} />
+        </a>
+      </li>
     {/each}
-  </div>
+  </ul>
   {#if numImgs > 1}
     <div class={classNames("carousel-ui", {hidden: hideUi})}>
       <div class="carousel-button prev" on:click={changeImage(currIdx - 1)}>
@@ -87,56 +109,37 @@
   @import "src/lib/style/variables.scss";
 
   .carousel {
-    width: 100%;
     position: relative;
+    width: 100%;
 
-    .carousel-images {
-      overflow: hidden;
+    .carousel-inner {
+      position: relative;
       display: flex;
-      flex-direction: row;
       width: 100%;
+      aspect-ratio: 16 / 9;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      transition: transform var(--sliding-time) ease;
 
-      a {
-        // flex-shrink: 0;
-        transition: transform 2000ms ease;
-        display: none;
-          
-        &.active {
-          display: block;
-
-          &.slide-to-prev {
-            transform: translateX(100%);
-          }
-
-          &.slide-to-next {
-            transform: translateX(-100%);
-          }
-        }
-  
-        &.prev {
-          &.slide-to-prev {
-            display: block;
-            // transform: translateX(100%)
-          }
-        }
-  
-        &.next {
-          &.slide-to-next {
-            display: block;
-            // transform: translateX(-100%)
-          }
-        }
+      .carousel-slide {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        overflow: hidden;
   
         img {
           width: 100%;
-          display: block;
+          height: 100%;
+          object-fit: cover;
+          object-position: top;
         }
       }
     }
 
     .carousel-ui {
       $indicator-full-height: 24px;
-      $indicator-collapsed-height: 3px;
+      $indicator-collapsed-height: 5px;
       $indicator-padding-top: 8px;
 
       .carousel-button {
@@ -144,19 +147,35 @@
 
         position: absolute;
         top: 0;
+        // don't extend to indicator, just height of image
         bottom: calc(#{$indicator-full-height} + #{$indicator-padding-top});
         display: flex;
         align-items: center;
         justify-content: center;
         text-shadow: 0 0 4px rgba(51, 51, 51, 0.606);
         cursor: pointer;
+        background: transparent;
 
         &.prev {
-          padding-right: 10%;
+          padding-right: 1em;
+          left: 0;
+          background: linear-gradient(
+            90deg,
+            rgba(28, 28, 28, 0.496) 0%,
+            rgba(43, 43, 43, 0.329) 40%,
+            rgba(255,255,255,0) 100%
+          );
         }
 
         &.next {
-          padding-left: 10%;
+          padding-left: 1em;
+          right: 0;
+          background: linear-gradient(
+            -90deg,
+            rgba(28, 28, 28, 0.678) 0%,
+            rgba(43, 43, 43, 0.329) 40%,
+            rgba(255,255,255,0) 100%
+          );
         }
   
         &:hover .icon {
@@ -165,16 +184,23 @@
   
         .icon {
           color: white;
-          font-size: 3em;
+          font-size: 1.6em;
           opacity: 0.5;
         }
-  
-        &.prev {
-          left: 0;
-        }
-  
-        &.next {
-          right: 0;
+
+        // desktop
+        @media (min-width: $medium-width) {
+          &.next {
+            padding-left: 8%;
+          }
+
+          &.prev {
+            padding-right: 8%;
+          }
+
+          .icon {
+            font-size: 3em;
+          }
         }
       }
   

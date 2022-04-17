@@ -8,6 +8,18 @@ $navbar-height: 3.5rem;
   font-weight: bold;
 }
 
+// on mobile, image carousel sliding transitions caused the project
+// container rounded corners to disappear, so this fixes it
+// https://stackoverflow.com/a/16681137
+@mixin transitionFix {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+}
+
 //colors
 $color-theme-red: #ff3e00;
 $color-light-gray: #f3f3f3;

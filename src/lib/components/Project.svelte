@@ -3,12 +3,12 @@
   import ImageCarousel from "./ImageCarousel.svelte";
 
   export let project: ProjectData;
-  let {title, description, images, links} = project;
+  let {title, description, images, links, styleOverride} = project;
   
 </script>
 
 <div class="project">
-  <ImageCarousel {images} />
+  <ImageCarousel {images} imageStyle={styleOverride} />
   <div class="text-container">
     <h2>{title}</h2>
     <p class={"description"}>{description}</p>
@@ -24,6 +24,8 @@
   @import "src/lib/style/variables.scss";
 
   .project {
+    // fixes an issue with image carousel transitions
+    @include transitionFix;
     --spacing: 3em;
     margin-top: var(--spacing);
     background-color: $color-light-gray;
