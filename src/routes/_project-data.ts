@@ -3,9 +3,9 @@ import type { NonemptyArray } from "$lib/types";
 export interface ProjectData {
   title: string;
   description: string;
-  images: NonemptyArray<string>;
-  links: NonemptyArray<[string, string]>;
-  styleOverride?: string;
+  images: NonemptyArray<string>; // path of "images/[project]"
+  links?: NonemptyArray<[string, string]>; // [text, href]
+  styleOverride?: string; // additional image styling
 }
 
 export const projects: ProjectData[] = [
@@ -33,13 +33,24 @@ export const projects: ProjectData[] = [
     title: "This Website",
     description: "Built with SvelteKit and hosted by GitHub Pages, this website shows snippets of my personal and professional projects. In addition to sharing my work, creating this site has taught me a great deal about Svelte and SvelteKit, from syntax to routing. After using React's virtual DOM for so many sites and apps, the compiled nature of Svelte is rather refreshing.",
     images: [
-      "images/portfolio/portfolio-home-1024.jpeg",
-      "images/portfolio/portfolio-carousel-1024.jpeg",
-      "images/portfolio/portfolio-about-1024.jpeg",
+      "images/portfolio/portfolio-home-1024.jpg",
+      "images/portfolio/portfolio-carousel-1024.jpg",
+      "images/portfolio/portfolio-about-1024.jpg",
     ],
     links: [
       ["GitHub", "https://github.com/nwager/nwager.github.io"],
     ],
+  },
+  {
+    title: "ESP8266 WiFi LED Lighting",
+    description: "To spice up my room lighting, I created an LED strip controller using an ESP8266. The chip serves a webpage that controls HSV and animation style using HTTP requests, which makes lighting adjustments quick and convenient. The hardware consists of a 12V source that sends power to a WS2811 LED strip, as well as a 5V buck converter that drives the ESP8266 and an optional WS2812B strip that tells time in binary (not active due to conflicts with apartment aesthetics).",
+    images: [
+      "images/esp8266-leds/esp8266-both-1024.jpg",
+      "images/esp8266-leds/esp8266-leds-1024.jpg",
+      "images/esp8266-leds/esp8266-leds-box-1024.jpg",
+      "images/esp8266-leds/esp8266-site-1024.jpg",
+    ],
+    styleOverride: "object-position:center",
   },
   {
     title: "React + ThreeJS Demo",

@@ -39,16 +39,25 @@
 				As a member of the Avionics team, I am responsible for creating wiring schematics, assembling and soldering electrical components, and installing the flight controller and control surfaces.
 			</p>
 			<figure>
-				<a class="image-link" href="{base}/images/about/uw22albatross.jpeg" target="_blank" rel="noopener">
-					<img src="{base}/images/about/uw22albatross-1024.jpeg" alt="DBF plane 2022: UW-22 Albatross" />
+				<a class="image-link" href="{base}/images/about/uw22albatross.jpg" target="_blank" rel="noopener">
+					<img src="{base}/images/about/uw22albatross-1024.jpg" alt="DBF plane 2022: UW-22 Albatross" />
 				</a>
 				<figcaption>Our plane for the 2022 competition: the UW-22 Albatross.</figcaption>
 			</figure>
 
 			<h2>Music</h2>
 			<p>
-				When I'm not working on projects, I spend much of my free time playing electric bass and guitar. I started on bass in 2012 and began learning guitar in high school, playing covers at School of Rock, Portland. I currently play bass for <a href="https://thesleepyhaunts.com/home/" target="_blank" rel="noopener">The Sleepy Haunts</a>, an indie-pop band with rock influence.
+				When I'm not working on projects, I spend much of my free time playing electric bass and guitar. I started on bass in 2012 and began learning guitar in high school, playing covers at School of Rock, Portland.
+				<br/>
+				I currently play bass for <a href="https://thesleepyhaunts.com/home/" target="_blank" rel="noopener">The Sleepy Haunts</a>, an indie-pop band with rock influence. We recently played in MoPOP's <a href="https://mopop.org/sound-off-2022" target="_blank" rel="noopener">2022 Sound Off!</a> showcase (<a href="https://www.youtube.com/watch?v=RDYRUcaeVVM&ab_channel=MuseumofPopCulture" target="_blank" rel="noopener">cool video</a>), where we performed in the museum's Sky Church with other up-and-coming Seattle artists.
 			</p>
+			<figure>
+				<a class="image-link" href="{base}/images/about/soundoff.jpg" target="_blank" rel="noopener">
+					<img src="{base}/images/about/soundoff-1024.jpg" alt="The Sleepy Haunts at MoPOP's Skychurch." />
+				</a>
+				<figcaption>The Sleepy Haunts at MoPOP's Skychurch.</figcaption>
+			</figure>
+
 			<h2>Contact</h2>
 			{#each contacts as {icon, text, link}}
 				<div class="contact-item">
@@ -96,7 +105,7 @@
 				
 				img {
 					width: 100%;
-					border-radius: 8px;
+					border-radius: 6px;
 				}
 			}
 

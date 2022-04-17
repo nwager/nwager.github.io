@@ -12,11 +12,13 @@
   <div class="text-container">
     <h2>{title}</h2>
     <p class={"description"}>{description}</p>
-    <div class="link-container">
-      {#each links as [text, href]}
-        <a href={href} target="_blank" rel="noopener">{text}</a>
-      {/each}
-    </div>
+    {#if links}
+      <div class="link-container">
+        {#each links as [text, href]}
+          <a href={href} target="_blank" rel="noopener">{text}</a>
+        {/each}
+      </div>
+    {/if}
   </div>
 </div>
 
@@ -58,10 +60,10 @@
       
       .description {
         margin: 0;
+        margin-bottom: 0.5em;
       }
 
       .link-container {
-        margin-top: 0.5em;
         display: flex;
         flex-direction: column;
         align-items: flex-start;

@@ -127,6 +127,7 @@
         height: 100%;
         flex-shrink: 0;
         overflow: hidden;
+        user-select: none;
   
         img {
           width: 100%;
