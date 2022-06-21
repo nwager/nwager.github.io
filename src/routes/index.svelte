@@ -18,6 +18,5 @@ import Markdown from "$lib/components/Markdown.svelte";
 				<Project project={proj} />
 			{/each}
 		</div>
-		<Markdown filePath={"/test.md"} />
 	</CenterContainer>
 </section>
