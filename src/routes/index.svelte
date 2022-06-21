@@ -1,6 +1,7 @@
 <script lang="ts">
   import CenterContainer from "$lib/components/CenterContainer.svelte";
 	import Header from "$lib/components/Header.svelte";
+import Markdown from "$lib/components/Markdown.svelte";
   import Project from "$lib/components/Project.svelte";
   import { projects } from "./_project-data";
 </script>
@@ -17,5 +18,6 @@
 				<Project project={proj} />
 			{/each}
 		</div>
+		<Markdown filePath={"/test.md"} />
 	</CenterContainer>
 </section>
