@@ -1,3 +1,4 @@
+import { base } from "$app/paths";
 import type { NonemptyArray } from "$lib/types";
 
 export interface ProjectData {
@@ -7,6 +8,8 @@ export interface ProjectData {
   links?: NonemptyArray<[string, string]>; // [text, href]
   styleOverride?: string; // additional image styling
 }
+
+const postPath = base + "/";
 
 export const projects: ProjectData[] = [
   {
@@ -49,6 +52,9 @@ export const projects: ProjectData[] = [
       "images/esp8266-leds/esp8266-leds-1024.jpg",
       "images/esp8266-leds/esp8266-leds-box-1024.jpg",
       "images/esp8266-leds/esp8266-site-1024.jpg",
+    ],
+    links: [
+      ["Read more", postPath + "esp8266-leds"]
     ],
     styleOverride: "object-position:center",
   },
