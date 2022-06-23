@@ -11,13 +11,13 @@
 	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-950b54d3.css">
 	<link rel="stylesheet" href="/_app/assets/CenterContainer-3f291631.css">
 	<link rel="stylesheet" href="/_app/assets/pages/_slug_/index.svelte-ee756237.css">
-	<link rel="modulepreload" href="/_app/start-e3499444.js">
+	<link rel="modulepreload" href="/_app/start-5de4dfa0.js">
 	<link rel="modulepreload" href="/_app/chunks/index-b588d774.js">
 	<link rel="modulepreload" href="/_app/chunks/paths-396f020f.js">
 	<link rel="modulepreload" href="/_app/pages/__layout.svelte-42f519d3.js">
 	<link rel="modulepreload" href="/_app/pages/_slug_/__layout.svelte-1d27b94c.js">
 	<link rel="modulepreload" href="/_app/chunks/CenterContainer-b2650ee3.js">
-	<link rel="modulepreload" href="/_app/pages/_slug_/index.svelte-200dd818.js">
+	<link rel="modulepreload" href="/_app/pages/_slug_/index.svelte-f28fd72b.js">
 	<link rel="modulepreload" href="/_app/chunks/utils-8309f6d0.js">
 	</head>
 	<body>
@@ -38,6 +38,7 @@
 <div class="post-content svelte-1r9bln8"><h1>ESP8266 WiFi LED Lighting</h1>
   <p><img src="/images/esp8266-leds/esp8266-both-1024.jpg" alt="ESP8266 controller enclosure and circuit board"></p>
 <p>As a college student, it was customary to cover the apartment ceiling with tacky LED strips that detract from the otherwise-cozy home decor. Programming addressable LED strips is one of my favorite electronics activities, so I used an ESP8266 to control the LEDs using WiFi (in the name of convenience).</p>
+<p>The poorly-documented code can be found on <a href="https://github.com/nwager/dorm-lights" rel="nofollow">Github</a>.</p>
 <h2>Hardware</h2>
 <p>To make the controller compact, I designed a simple PCB to hold the ESP8266, buck converter, PSU terminals, and 3.3V-5V level shifter (hidden underneath the ESP).</p>
 <p>WS2811 strips require 12V, and my specific strip drew around 75W. I decided to use a 150W 12V power supply to have a sizeable power cushion, with room to extend the LED strip in the future. I also included a 1000uF smoothing capacitor for good measure.</p>
@@ -63,10 +64,10 @@
 </main>
 
 
-		<script type="module" data-hydrate="1pq33l9">
-		import { start } from "/_app/start-e3499444.js";
+		<script type="module" data-hydrate="1l6xkdh">
+		import { start } from "/_app/start-5de4dfa0.js";
 		start({
-			target: document.querySelector('[data-hydrate="1pq33l9"]').parentNode,
+			target: document.querySelector('[data-hydrate="1l6xkdh"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -78,7 +79,7 @@
 				nodes: [
 					import("/_app/pages/__layout.svelte-42f519d3.js"),
 						import("/_app/pages/_slug_/__layout.svelte-1d27b94c.js"),
-						import("/_app/pages/_slug_/index.svelte-200dd818.js")
+						import("/_app/pages/_slug_/index.svelte-f28fd72b.js")
 				],
 				params: {slug:"esp8266-leds"},
 				routeId: "[slug]"
