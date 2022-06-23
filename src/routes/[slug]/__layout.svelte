@@ -2,6 +2,6 @@
   import CenterContainer from "$lib/components/CenterContainer.svelte";
 </script>
 
-<CenterContainer>
+<CenterContainer styles={{"max-width": "45em"}}>
   <slot />
 </CenterContainer>

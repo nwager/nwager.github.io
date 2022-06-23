@@ -5,8 +5,26 @@
 
 <main>
   <Nav />
-  <slot></slot>
-  <footer>Powered by&nbsp;<a href="https://kit.svelte.dev/" target="_blank" rel="noopener">SvelteKit</a>.</footer>
+  <slot />
+  <footer>
+    Powered by&nbsp;
+    <a
+      href="https://kit.svelte.dev/"
+      target="_blank"
+      rel="noopener"
+    >
+      SvelteKit
+    </a>
+    . Hosted on&nbsp;
+    <a
+      href="https://github.com/nwager/nwager.github.io"
+      target="_blank"
+      rel="noopener"
+    >
+      Github
+    </a>
+    .
+  </footer>
 </main>
 
 <style lang="scss">

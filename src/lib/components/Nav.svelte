@@ -9,7 +9,7 @@
   };
 
   let windowWidth;
-  $: titleName = windowWidth < NARROW_WIDTH ? "NW" : "Noah Wager";
+  $: titleName = windowWidth >= NARROW_WIDTH ? "Noah Wager" : "NW";
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />

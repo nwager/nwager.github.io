@@ -58,7 +58,7 @@
       "unused" css since the elements aren't visible at compile time
     */
     :global(img) {
-      width: 100%;
+      max-width: 100%;
     }
   }
 </style>
