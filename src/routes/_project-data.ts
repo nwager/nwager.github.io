@@ -54,7 +54,8 @@ export const projects: ProjectData[] = [
       "images/esp8266-leds/esp8266-site-1024.jpg",
     ],
     links: [
-      ["Read more", postPath + "esp8266-leds"]
+      ["Read more", postPath + "esp8266-leds"],
+      ["Github", "https://github.com/nwager/dorm-lights"],
     ],
     styleOverride: "object-position:center",
   },

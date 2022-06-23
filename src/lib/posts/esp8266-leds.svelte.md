@@ -14,6 +14,8 @@ published: true
 
 As a college student, it was customary to cover the apartment ceiling with tacky LED strips that detract from the otherwise-cozy home decor. Programming addressable LED strips is one of my favorite electronics activities, so I used an ESP8266 to control the LEDs using WiFi (in the name of convenience).
 
+The poorly-documented code can be found on [Github](https://github.com/nwager/dorm-lights).
+
 ## Hardware
 
 To make the controller compact, I designed a simple PCB to hold the ESP8266, buck converter, PSU terminals, and 3.3V-5V level shifter (hidden underneath the ESP).
