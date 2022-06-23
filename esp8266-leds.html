@@ -10,14 +10,14 @@
 		<meta http-equiv="content-security-policy" content="">
 	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-950b54d3.css">
 	<link rel="stylesheet" href="/_app/assets/CenterContainer-3f291631.css">
-	<link rel="stylesheet" href="/_app/assets/pages/_slug_/index.svelte-7db56c43.css">
-	<link rel="modulepreload" href="/_app/start-170abb2a.js">
+	<link rel="stylesheet" href="/_app/assets/pages/_slug_/index.svelte-ee756237.css">
+	<link rel="modulepreload" href="/_app/start-e3499444.js">
 	<link rel="modulepreload" href="/_app/chunks/index-b588d774.js">
 	<link rel="modulepreload" href="/_app/chunks/paths-396f020f.js">
-	<link rel="modulepreload" href="/_app/pages/__layout.svelte-30f8340f.js">
-	<link rel="modulepreload" href="/_app/pages/_slug_/__layout.svelte-8fc9e91b.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-42f519d3.js">
+	<link rel="modulepreload" href="/_app/pages/_slug_/__layout.svelte-1d27b94c.js">
 	<link rel="modulepreload" href="/_app/chunks/CenterContainer-b2650ee3.js">
-	<link rel="modulepreload" href="/_app/pages/_slug_/index.svelte-a137bbe7.js">
+	<link rel="modulepreload" href="/_app/pages/_slug_/index.svelte-200dd818.js">
 	<link rel="modulepreload" href="/_app/chunks/utils-8309f6d0.js">
 	</head>
 	<body>
@@ -26,28 +26,47 @@
 
 <main class="svelte-clyqs5">
 
-<div id="navbar" class="svelte-1lkdt1t"><a class="title-name svelte-1lkdt1t" href="/">Noah Wager</a>
+<div id="navbar" class="svelte-1lkdt1t"><a class="title-name svelte-1lkdt1t" href="/">NW</a>
   <a href="/" class="svelte-1lkdt1t">Projects</a><a href="/about" class="svelte-1lkdt1t">About</a>
 </div>
-  <div class="center-container svelte-1pkor3n" style="--target-width:70vw;--max-width:60em;--min-width:initial;--background-color:transparent"><div class="content svelte-1pkor3n">
+  <div class="center-container svelte-1pkor3n" style="--target-width:70vw;--max-width:45em;--min-width:initial;--background-color:transparent"><div class="content svelte-1pkor3n">
 
 
 
 
 
-<div class="post-content svelte-1failjr"><h1>ESP8266 WiFi LED Lighting</h1>
-  <p><img src="/images/esp8266-leds/esp8266-both-1024.jpg" alt="ESP8266 controller and active LED strip"></p>
-<p>As a college student, it was customary to cover the apartment ceiling with tacky LED strips that detract from the otherwise-cozy home decor. Programming addressable LED strips with microcontrollers is one of my favorite electronics activities, so I used an ESP8266 to control the LEDs using WiFi (in the name of convenience).</p>
+<div class="post-content svelte-1r9bln8"><h1>ESP8266 WiFi LED Lighting</h1>
+  <p><img src="/images/esp8266-leds/esp8266-both-1024.jpg" alt="ESP8266 controller enclosure and circuit board"></p>
+<p>As a college student, it was customary to cover the apartment ceiling with tacky LED strips that detract from the otherwise-cozy home decor. Programming addressable LED strips is one of my favorite electronics activities, so I used an ESP8266 to control the LEDs using WiFi (in the name of convenience).</p>
+<h2>Hardware</h2>
+<p>To make the controller compact, I designed a simple PCB to hold the ESP8266, buck converter, PSU terminals, and 3.3V-5V level shifter (hidden underneath the ESP).</p>
+<p>WS2811 strips require 12V, and my specific strip drew around 75W. I decided to use a 150W 12V power supply to have a sizeable power cushion, with room to extend the LED strip in the future. I also included a 1000uF smoothing capacitor for good measure.</p>
+<p>To power the ESP8266, I used a 5V buck converter board with header pins that slot into corresponding connectors on the PCB. The ESP operates at 3.3V while the WS2811s use 5V, so I pass the datalines through a 5V level shifter IC (SN74HCT245) and 330-ohm resistors for safety.</p>
+<h2>Software</h2>
+<p>The ESP serves an HTML page stored in program memory. This page contains HTTP POSTs to send commands from the webpage to the ESP (i.e. color selection, on-off toggling, animation selection). Upon receiving these messages, the ESP updates the lights accordingly and sends back a response so the webpage is up-to-date.</p>
+<p>To control the LEDs, I used the popular library <a href="https://fastled.io/" rel="nofollow">FastLED</a>. It provides an API to change the LED HSV values and individually address each pixel.</p>
+<h2>What about the loose connector on the left?</h2>
+<p>For fun, I added support for a “clock” that displays the current time in binary on a WS2812B strip. 12-hour time can be displayed in 10 bits: 4 for hours 0-11, and 6 for minutes 0-59. To separate the hours and minutes, a single LED between them toggles every second. In total, the WS2812B strip needs 11 pixels. Unfortunately, I wasn’t able to create a housing for the clock that fits aesthetically, so I disconnected the feature.</p>
+<h2>Summary</h2>
+<p>This project was a fun exercise in simple web-based apps using an ESP8266, with pretty lights as visual feedback (my favorite kind of feedback!). The available controls are fairly basic, and much more interesting animations are possible with FastLED. However, on the rare occasions where the LEDs are turned on, the ability to finely control the color with a mobile device is good enough.</p>
+<p><img src="/images/esp8266-leds/esp8266-leds-1024.jpg" alt="LED strip turned on"></p>
 </div></div>
 </div>
-  <footer class="svelte-clyqs5">Powered by <a href="https://kit.svelte.dev/" target="_blank" rel="noopener">SvelteKit</a>.</footer>
+  <footer class="svelte-clyqs5">Powered by 
+    <a href="https://kit.svelte.dev/" target="_blank" rel="noopener">SvelteKit
+    </a>
+    . Hosted on 
+    <a href="https://github.com/nwager/nwager.github.io" target="_blank" rel="noopener">Github
+    </a>
+    .
+  </footer>
 </main>
 
 
-		<script type="module" data-hydrate="h5cpx3">
-		import { start } from "/_app/start-170abb2a.js";
+		<script type="module" data-hydrate="1pq33l9">
+		import { start } from "/_app/start-e3499444.js";
 		start({
-			target: document.querySelector('[data-hydrate="h5cpx3"]').parentNode,
+			target: document.querySelector('[data-hydrate="1pq33l9"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -57,9 +76,9 @@
 				status: 200,
 				error: null,
 				nodes: [
-					import("/_app/pages/__layout.svelte-30f8340f.js"),
-						import("/_app/pages/_slug_/__layout.svelte-8fc9e91b.js"),
-						import("/_app/pages/_slug_/index.svelte-a137bbe7.js")
+					import("/_app/pages/__layout.svelte-42f519d3.js"),
+						import("/_app/pages/_slug_/__layout.svelte-1d27b94c.js"),
+						import("/_app/pages/_slug_/index.svelte-200dd818.js")
 				],
 				params: {slug:"esp8266-leds"},
 				routeId: "[slug]"
