@@ -23,7 +23,7 @@
 
 <style lang="scss">
   // change navbar-height here
-  @import "src/lib/style/variables.scss";
+  @import "src/lib/style/variables";
 
   #navbar {
     position: fixed;

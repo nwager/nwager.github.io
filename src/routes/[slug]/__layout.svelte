@@ -1,7 +1,7 @@
 <script lang="ts">
-  import CenterContainer from "$lib/components/CenterContainer.svelte";
+  import ColumnContainer from "$lib/components/ColumnContainer.svelte";
 </script>
 
-<CenterContainer styles={{"max-width": "45em"}}>
+<ColumnContainer styles={{"max-width": "45em"}}>
   <slot />
-</CenterContainer>
+</ColumnContainer>

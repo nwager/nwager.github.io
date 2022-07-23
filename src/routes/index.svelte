@@ -1,7 +1,8 @@
 <script lang="ts">
-  import CenterContainer from "$lib/components/CenterContainer.svelte";
+  import ColumnContainer from "$lib/components/ColumnContainer.svelte";
 	import Header from "$lib/components/Header.svelte";
   import Project from "$lib/components/Project.svelte";
+	import TableOfContents from "$lib/components/TableOfContents.svelte";
   import { projects } from "./_project-data";
 </script>
 
@@ -11,11 +12,15 @@
 
 <section>
 	<Header header="Projects" />
-	<CenterContainer>
+	<ColumnContainer
+		leftComponent={TableOfContents}
+		leftProps={{ sections: projects.map(p => p.title) }}
+		leftSticky={true}
+	>
 		<div id="projects">
 			{#each projects as proj}
 				<Project project={proj} />
 			{/each}
 		</div>
-	</CenterContainer>
+	</ColumnContainer>
 </section>

@@ -21,7 +21,7 @@
 </div>
 
 <style lang="scss">
-  @import "src/lib/style/variables.scss";
+  @import "src/lib/style/variables";
 
   #header {
     min-height: 9em;

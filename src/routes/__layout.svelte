@@ -28,7 +28,7 @@
 </main>
 
 <style lang="scss">
-  @import "src/lib/style/variables.scss";
+  @import "src/lib/style/variables";
 
   main {
     padding-top: $navbar-height;

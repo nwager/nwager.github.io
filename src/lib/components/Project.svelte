@@ -14,8 +14,8 @@
     <p class={"description"}>{description}</p>
     {#if links}
       <div class="link-container">
-        {#each links as [text, href]}
-          <a href={href} target="_blank" rel="noopener">{text}</a>
+        {#each links as {text, url}}
+          <a href={url} target="_blank" rel="noopener">{text}</a>
         {/each}
       </div>
     {/if}
@@ -23,7 +23,7 @@
 </div>
 
 <style lang="scss">
-  @import "src/lib/style/variables.scss";
+  @import "src/lib/style/variables";
 
   .project {
     // fixes an issue with image carousel transitions

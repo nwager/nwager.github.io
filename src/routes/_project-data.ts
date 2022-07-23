@@ -1,11 +1,11 @@
 import { base } from "$app/paths";
-import type { NonemptyArray } from "$lib/types";
+import type { Link, NonemptyArray } from "$lib/types";
 
 export interface ProjectData {
   title: string;
   description: string;
-  images: NonemptyArray<string>; // path of "images/[project]"
-  links?: NonemptyArray<[string, string]>; // [text, href]
+  images: NonemptyArray<string>; // path of "images/{project}"
+  links?: NonemptyArray<Link>;
   styleOverride?: string; // additional image styling
 }
 
@@ -19,7 +19,7 @@ export const projects: ProjectData[] = [
       "images/mp-sps/sps-ewf-1024.jpg"
     ],
     links: [
-      ["View this space", "https://my.matterport.com/show/?m=ugH9NdUC3aC&q=september"]
+      {text: "View this space", url: "https://my.matterport.com/show/?m=ugH9NdUC3aC&q=september"}
     ],
   },
   {
@@ -29,7 +29,7 @@ export const projects: ProjectData[] = [
       "images/mp-title/mp-menu-marked-1024.jpg"
     ],
     links: [
-      ["View this space", "https://my.matterport.com/show/?m=CRg23STmKZp"]
+      {text: "View this space", url: "https://my.matterport.com/show/?m=CRg23STmKZp"}
     ],
   },
   {
@@ -41,7 +41,7 @@ export const projects: ProjectData[] = [
       "images/portfolio/portfolio-about-1024.jpg",
     ],
     links: [
-      ["GitHub", "https://github.com/nwager/nwager.github.io"],
+      {text: "GitHub", url: "https://github.com/nwager/nwager.github.io"},
     ],
   },
   {
@@ -54,8 +54,8 @@ export const projects: ProjectData[] = [
       "images/esp8266-leds/esp8266-site-1024.jpg",
     ],
     links: [
-      ["Read more", postPath + "esp8266-leds"],
-      ["Github", "https://github.com/nwager/dorm-lights"],
+      {text: "Read more", url: postPath + "esp8266-leds"},
+      {text: "Github", url: "https://github.com/nwager/dorm-lights"},
     ],
     styleOverride: "object-position:center",
   },
@@ -67,8 +67,8 @@ export const projects: ProjectData[] = [
       "images/r3js/r3js-contact-1024.jpg",
     ],
     links: [
-      ["Website", "https://nwager.github.io/react-threejs/"],
-      ["GitHub", "https://github.com/nwager/react-threejs"],
+      {text: "Website", url: "https://nwager.github.io/react-threejs/"},
+      {text: "GitHub", url: "https://github.com/nwager/react-threejs"},
     ],
   },
   {
@@ -81,7 +81,7 @@ export const projects: ProjectData[] = [
       "images/fume-extractor/fume-ext-halfdisas-1024.jpg",
     ],
     links: [
-      ["More info", "https://github.com/nwager/3dp-fume-extractor-case/"],
+      {text: "More info", url: "https://github.com/nwager/3dp-fume-extractor-case/"},
     ],
     styleOverride: "object-position:center",
   },
@@ -92,8 +92,8 @@ export const projects: ProjectData[] = [
       "images/pi-day/pi-day-cap-1024.jpg",
     ],
     links: [
-      ["Website", "https://nwager.github.io/pi-day-2021/"],
-      ["GitHub", "https://github.com/nwager/pi-day-2021"],
+      {text: "Website", url: "https://nwager.github.io/pi-day-2021/"},
+      {text: "GitHub", url: "https://github.com/nwager/pi-day-2021"},
     ],
   },
   {
@@ -103,8 +103,8 @@ export const projects: ProjectData[] = [
       "images/music-maker/music-maker-cap-1024.jpg",
     ],
     links: [
-      ["Website", "https://nwager.github.io/music-maker/"],
-      ["GitHub", "https://github.com/nwager/music-maker"],
+      {text: "Website", url: "https://nwager.github.io/music-maker/"},
+      {text: "GitHub", url: "https://github.com/nwager/music-maker"},
     ],
   },
   {
@@ -117,8 +117,8 @@ export const projects: ProjectData[] = [
       "images/circular-motion/csia-recording.gif",
     ],
     links: [
-      ["Website", "https://nwager.github.io/CircularMotion/"],
-      ["GitHub", "https://github.com/nwager/CircularMotion"],
+      {text: "Website", url: "https://nwager.github.io/CircularMotion/"},
+      {text: "GitHub", url: "https://github.com/nwager/CircularMotion"},
     ],
   },
 ];

@@ -20,7 +20,7 @@
 </a>
 
 <style lang="scss">
-  @import "src/lib/style/variables.scss";
+  @import "src/lib/style/variables";
 
   .github-corner:hover .octo-arm{
     animation: octocat-wave 560ms ease-in-out;

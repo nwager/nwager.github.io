@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from "$app/paths";
-	import CenterContainer from "$lib/components/CenterContainer.svelte";
+	import ColumnContainer from "$lib/components/ColumnContainer.svelte";
   import Header from "$lib/components/Header.svelte";
 
 	const contacts = [
@@ -23,7 +23,7 @@
 
 <section>
 	<Header header="About" />
-	<CenterContainer styles={{"target-width": "50vw", "min-width": "50ch", "max-width": "75ch"}}>
+	<ColumnContainer styles={{"target-width": "50vw", "min-width": "50ch", "max-width": "75ch"}}>
 		<img class="myface" src="{base}/images/about/face.png" alt="My face" />
 		<div class="bio">
 			<h2>About Me</h2>
@@ -70,11 +70,11 @@
 				</div>
 			{/each}
 		</div>
-	</CenterContainer>
+	</ColumnContainer>
 </section>
 
 <style lang="scss">
-	@import "src/lib/style/variables.scss";
+	@import "src/lib/style/variables";
 
 	.myface {
 		margin-top: 2em;

@@ -106,7 +106,7 @@
 </div>
 
 <style lang="scss">
-  @import "src/lib/style/variables.scss";
+  @import "src/lib/style/variables";
 
   .carousel {
     position: relative;
