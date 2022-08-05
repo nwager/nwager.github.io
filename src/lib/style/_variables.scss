@@ -3,6 +3,11 @@ $narrow-width: 640px; // NARROW_WIDTH
 
 $navbar-height: 3.5rem;
 
+@mixin Noah-Regular {
+  font-family: 'Noah-Bold', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
 @mixin Noah-Bold {
   font-family: 'Noah-Bold', Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -26,3 +31,4 @@ $color-light-gray: #f3f3f3;
 $color-white: #fff;
 $color-skyline-blue: #326575; // average-ish color of pdx skyline img
 // $color-dark-blue: #14282e;
+$color-text-dark: #333333; // match app.css

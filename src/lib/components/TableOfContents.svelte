@@ -2,6 +2,7 @@
   import type { Link } from "$lib/types";
   import { onMount } from "svelte";
 
+  export let title: string | undefined = undefined;
   export let sections: string[];
   let links: Link[] = [];
 
@@ -24,7 +25,9 @@
 </script>
 
 <div class="toc">
-  <h2 class="toc-title">Table of Contents</h2>
+  {#if title}
+    <div class="toc-title">{title}</div>
+  {/if}
   <ul>
     {#each links as {text, url}}
       <li>
@@ -40,16 +43,38 @@
   .toc {
     position: sticky;
     top: 0;
-    width: 100%;
-    background-color: aquamarine;
-
-    ul {
-      margin: 0;
-      text-align: left;
-    }
+    padding: 0.6em;
 
     .toc-title {
       margin: 0;
+      text-align: left;
+      margin-bottom: 0.2em;
+      font-size: 1.2em;
+      font-weight: 500;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      list-style-type: none;
+
+      li {
+        a {
+          display: inline-block;
+          text-decoration: none;
+          color: $color-text-dark;
+          padding: 0.3em;
+          @include Noah-Regular;
+
+          transition: background-color 0.1s linear;
+
+          &:hover {
+            background-color: #f0f0f0;
+            border-radius: 6px;
+          }
+        }
+      }
     }
   }
 </style>

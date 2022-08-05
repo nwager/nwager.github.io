@@ -9,7 +9,7 @@
   }
   export let styles: Styles | undefined = undefined;
   let defaultStyles: Styles = {
-    "target-width": "60vw",
+    "target-width": "55vw",
     "max-width": "60em",
     "min-width": "initial",
     "background-color": "transparent",
