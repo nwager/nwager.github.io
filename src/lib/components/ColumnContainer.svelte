@@ -16,11 +16,7 @@
   }
   Object.assign(defaultStyles, styles);
 
-  export let leftComponent: any = null;
-  export let leftProps: any = null;
   export let leftSticky = false;
-  export let rightComponent: any = null;
-  export let rightProps: object = {};
   export let rightSticky = false;
 </script>
 
@@ -35,16 +31,12 @@
   <div class="content">
     <slot></slot>
   </div>
-  {#if leftComponent}
-    <div class={classNames("left-sidebar", { sticky: leftSticky })}>
-      <svelte:component this={leftComponent} {...leftProps} />
-    </div>
-  {/if}
-  {#if rightComponent}
-    <div class={classNames("right-sidebar", { sticky: rightSticky })}>
-      <svelte:component this={rightComponent} {...rightProps} />
-    </div>
-  {/if}
+  <div class={classNames("sidebar left-sidebar", { sticky: leftSticky })}>
+    <slot name="left-column"></slot>
+  </div>
+  <div class={classNames("sidebar right-sidebar", { sticky: rightSticky })}>
+    <slot name="right-column"></slot>
+  </div>
 </div>
 
 <style lang="scss">
@@ -81,23 +73,20 @@
         min-width: var(--min-width);
       }
 
-      .left-sidebar {
-        grid-area: left;
-        grid-column: 1;
-
+      .sidebar {
         &.sticky {
           position: sticky;
           top: $navbar-height;
         }
-      }
 
-      .right-sidebar {
-        grid-area: right;
-        grid-column: 1;
-
-        &.sticky {
-          position: sticky;
-          top: $navbar-height;
+        &.left-sidebar {
+          grid-area: left;
+          grid-column: 1;
+        }
+  
+        &.right-sidebar {
+          grid-area: right;
+          grid-column: 1;
         }
       }
     }

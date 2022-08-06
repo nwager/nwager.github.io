@@ -1,7 +1,18 @@
-<script>
+<script lang="ts">
   import Nav from "$lib/components/Nav.svelte";
+  import { screenWidth } from "$lib/stores/screenWidthStore";
   import "../app.css";
+
+  function updateScreenWidthStore(
+    e: UIEvent & {
+      currentTarget: EventTarget & Window;
+    }
+  ) {
+    screenWidth.set(e.currentTarget.innerWidth);
+  }
 </script>
+
+<svelte:window on:resize={updateScreenWidthStore} />
 
 <main>
   <Nav />

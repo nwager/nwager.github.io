@@ -1,6 +1,7 @@
 <script lang="ts">
   import { base } from "$app/paths";
   import { page } from "$app/stores";
+  import { screenWidth } from "$lib/stores/screenWidthStore";
   import { NARROW_WIDTH } from "$lib/style/variables";
 
   const links = {
@@ -8,11 +9,8 @@
     "About": `${base}/about`,
   };
 
-  let windowWidth;
-  $: titleName = windowWidth >= NARROW_WIDTH ? "Noah Wager" : "NW";
+  $: titleName = $screenWidth >= NARROW_WIDTH ? "Noah Wager" : "NW";
 </script>
-
-<svelte:window bind:innerWidth={windowWidth} />
 
 <div id="navbar">
   <a class="title-name" href="{base}/">{titleName}</a>
