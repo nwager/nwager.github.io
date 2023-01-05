@@ -31,10 +31,10 @@
   <div class="content">
     <slot></slot>
   </div>
-  <div class={classNames("sidebar left-sidebar", { sticky: leftSticky })}>
+  <div class={classNames("column left-column", { sticky: leftSticky })}>
     <slot name="left-column"></slot>
   </div>
-  <div class={classNames("sidebar right-sidebar", { sticky: rightSticky })}>
+  <div class={classNames("column right-column", { sticky: rightSticky })}>
     <slot name="right-column"></slot>
   </div>
 </div>
@@ -73,18 +73,18 @@
         min-width: var(--min-width);
       }
 
-      .sidebar {
+      .column {
         &.sticky {
           position: sticky;
           top: $navbar-height;
         }
 
-        &.left-sidebar {
+        &.left-column {
           grid-area: left;
           grid-column: 1;
         }
   
-        &.right-sidebar {
+        &.right-column {
           grid-area: right;
           grid-column: 1;
         }

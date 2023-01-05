@@ -3,6 +3,7 @@
   import { onMount } from "svelte";
 
   export let title: string | undefined = undefined;
+  export let base: string | undefined = undefined;
   export let sections: string[];
   let links: Link[] = [];
 
@@ -15,10 +16,11 @@
   }
 
   onMount(() => {
+    const baseUrl = base === undefined ? window.location.href : base;
     links = sections.map(text => {
       return {
         text,
-        url: `${window.location.href}#:~:text=${encodeText(text)}`
+        url: `${baseUrl}#:~:text=${encodeText(text)}`
       }
     })
   });
@@ -41,8 +43,6 @@
   @import "src/lib/style/variables";
 
   .toc {
-    position: sticky;
-    top: 0;
     padding: 0.6em;
 
     .toc-title {
@@ -63,15 +63,14 @@
         a {
           display: inline-block;
           text-decoration: none;
-          color: $color-text-dark;
           padding: 0.3em;
           @include Noah-Regular;
+          border-radius: 6px;
 
           transition: background-color 0.1s linear;
 
           &:hover {
             background-color: #f0f0f0;
-            border-radius: 6px;
           }
         }
       }

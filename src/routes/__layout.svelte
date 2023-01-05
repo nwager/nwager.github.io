@@ -1,7 +1,7 @@
 <script lang="ts">
   import Nav from "$lib/components/Nav.svelte";
   import { screenWidth } from "$lib/stores/screenWidthStore";
-  import "../app.css";
+  import "../app.scss";
 
   function updateScreenWidthStore(
     e: UIEvent & {

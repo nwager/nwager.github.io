@@ -31,3 +31,12 @@
 		<!-- end default slot -->
 	</ColumnContainer>
 </section>
+
+<style lang="scss">
+	@import "src/lib/style/variables";
+
+	:global(.left-column .toc a) {
+		color: $color-text-dark;
+		font-size: 1.1em;
+	}
+</style>

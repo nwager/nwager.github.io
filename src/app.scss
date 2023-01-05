@@ -21,18 +21,18 @@ section {
 }
 
 a {
-	color: rgb(0,100,200);
+	color: #0064c8;
 	text-decoration: none;
+
+	&:visited {
+		color: #0064c8;
+	}
 }
 
 @media (hover: hover) {
 	a:hover {
 		text-decoration: underline;
 	}
-}
-
-a:visited {
-	color: rgb(0,80,160);
 }
 
 input, button, select, textarea {
