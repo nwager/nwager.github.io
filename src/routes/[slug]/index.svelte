@@ -5,7 +5,7 @@
 
   // Get posts info
   const allPosts = import.meta.globEager(
-    "../../lib/posts/**/*.{md,svx,svelte.md}"
+    "../../posts/**/*.{md,svx,svelte.md}"
   );
 
   let posts = [];
