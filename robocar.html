@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<link rel="icon" href="./favicon.png" />
+		<link rel="stylesheet" href="./portfolio-font/style.css" />
+		<link rel="stylesheet" href="./noah-font/style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-security-policy" content="">
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-950b54d3.css">
+	<link rel="stylesheet" href="/_app/assets/CenterContainer-3f291631.css">
+	<link rel="stylesheet" href="/_app/assets/pages/_slug_/index.svelte-ee756237.css">
+	<link rel="modulepreload" href="/_app/start-936533c6.js">
+	<link rel="modulepreload" href="/_app/chunks/index-b588d774.js">
+	<link rel="modulepreload" href="/_app/chunks/paths-396f020f.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-42f519d3.js">
+	<link rel="modulepreload" href="/_app/pages/_slug_/__layout.svelte-1d27b94c.js">
+	<link rel="modulepreload" href="/_app/chunks/CenterContainer-b2650ee3.js">
+	<link rel="modulepreload" href="/_app/pages/_slug_/index.svelte-b5a99ea9.js">
+	<link rel="modulepreload" href="/_app/chunks/utils-8309f6d0.js">
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<main class="svelte-clyqs5">
+
+<div id="navbar" class="svelte-1lkdt1t"><a class="title-name svelte-1lkdt1t" href="/">NW</a>
+  <a href="/" class="svelte-1lkdt1t">Projects</a><a href="/about" class="svelte-1lkdt1t">About</a>
+</div>
+  <div class="center-container svelte-1pkor3n" style="--target-width:70vw;--max-width:45em;--min-width:initial;--background-color:transparent"><div class="content svelte-1pkor3n">
+
+
+
+
+
+<div class="post-content svelte-1r9bln8"><h1>Robocar Home</h1>
+  <h2>Introduction</h2>
+<p><img src="/images/robocar/robocar-lidar-front-1024.jpg" alt="Front of in-progress Robocar with LIDAR mounted.">
+<em>The front of an in-progress Robocar with a LIDAR module mounted and various wires connecting to the Pico.</em></p>
+<h3>Objectives</h3>
+<p>This project requires a good amount of effort to complete, so why am I doing this?</p>
+<p>I’m pursuing this because it provides an exciting opportunity to learn new skills in embedded systems and robotics and improve my C and Python knowledge. My greatests interest in the technology sector is intelligent computer systems interfacing with hardware, and yet I have little experience in the field outside of school. Throughout this project, which is very much a work-in-progress, I hope to gain some of that experience in a way that is challenging and enjoyable.</p>
+<h3>UW Inpiration</h3>
+<p>“Robocar” is a project I started over the summer of 2022, heavily inspired by the Autonomous Robotics (CSE 478) course at the University of Washington. The class consisted of a simulator for the <a href="https://mushr.io" rel="nofollow">MuSHR</a> vehicle with an incomplete ROS stack that students implemented over the quarter. We learned the basics of localization, control theory, and planning, culminating in a semi-robust car that could follow a path in a predetermined map while avoiding obstacles. Unfortunately, COVID prevented the class from working with physical vehicles, so I was left unsatisfied in the hardware department. Hence, the existence of this project.</p>
+<h3>System Overview</h3>
+<p>Like MuSHR, my car would use a Jetson Nano (<a href="https://www.seeedstudio.com/Jetson-10-1-A0-p-5336.html" rel="nofollow">Seeed reComputer J1010</a>) running <a href="http://wiki.ros.org/melodic" rel="nofollow">ROS Melodic</a> to process data and calculate controls.</p>
+<p>The Nano is a very capable and somewhat-affordable SoC with a GPU, which made it the best choice for a small autonomous vehicle project. It can reliably synthesize LIDAR and camera data to localize the robot and detect objects, which is needed for the system.</p>
+<p>Unlike MuSHR, which uses a <a href="https://vesc-project.com" rel="nofollow">VESC</a>, I chose a cheap PWM-operated ESC. The VESC would normally handle motor control and steering, so in its place I incorporated a <a href="https://www.raspberrypi.com/products/raspberry-pi-pico" rel="nofollow">Raspberry Pi Pico</a> that takes commands from the Nano. Since there are various sensors, inputs, and other tasks to perform simultaneously on the Pico, it uses <a href="https://www.freertos.org" rel="nofollow">FreeRTOS</a>.</p>
+<p>The Pico was chosen mainly for its $4 price while offering two 125MHz cores and a well-documented C/C++ SDK from Raspberry Pi. FreeRTOS has a <a href="https://freertos.org/symmetric-multiprocessing-introduction.html" rel="nofollow">symmetric multiprocessing (SMP) port</a> that can utilize both cores, which sweetens the deal even further.</p>
+<h3>A Note on Naming</h3>
+<p>I needed to give the Jetson Nano and Raspberry Pi Pico generic names instead of “Nano” and “Pico” so I could theoretically switch out hardware without changing names in code. I decided on <strong>Brain</strong> for the Nano and <strong>Router</strong> for the Pico because the “Brain” carries out the central computations and sends signals to the auxiliary device, and the “Router” takes those signals and routes them to the corresponding peripheral.</p>
+<h2>Github Repositories</h2>
+<ul><li><a href="https://github.com/nwager/robocar_src" rel="nofollow">Robocar automation source code</a></li>
+<li><a href="https://github.com/nwager/robocar_ws" rel="nofollow">Onboard ROS Melodic (catkin) workspace</a></li>
+<li><a href="https://github.com/nwager/robocar_host_ws" rel="nofollow">Host machine Melodic (catkin) workspace</a></li>
+<li><a href="https://github.com/nwager/robocar_router" rel="nofollow">Auxiliary peripheral router system</a></li></ul>
+<h2>Updates</h2>
+<ul><li><a href="/robocar-1-4-22">Update 1/4/2022</a></li></ul>
+</div></div>
+</div>
+  <footer class="svelte-clyqs5">Powered by 
+    <a href="https://kit.svelte.dev/" target="_blank" rel="noopener">SvelteKit
+    </a>
+    . Hosted on 
+    <a href="https://github.com/nwager/nwager.github.io" target="_blank" rel="noopener">Github
+    </a>
+    .
+  </footer>
+</main>
+
+
+		<script type="module" data-hydrate="cy6a2m">
+		import { start } from "/_app/start-936533c6.js";
+		start({
+			target: document.querySelector('[data-hydrate="cy6a2m"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/_app/pages/__layout.svelte-42f519d3.js"),
+						import("/_app/pages/_slug_/__layout.svelte-1d27b94c.js"),
+						import("/_app/pages/_slug_/index.svelte-b5a99ea9.js")
+				],
+				params: {slug:"robocar"},
+				routeId: "[slug]"
+			}
+		});
+	</script></div>
+	</body>
+</html>

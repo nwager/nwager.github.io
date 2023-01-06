@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<link rel="icon" href="./favicon.png" />
+		<link rel="stylesheet" href="./portfolio-font/style.css" />
+		<link rel="stylesheet" href="./noah-font/style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-security-policy" content="">
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-950b54d3.css">
+	<link rel="stylesheet" href="/_app/assets/CenterContainer-3f291631.css">
+	<link rel="stylesheet" href="/_app/assets/pages/_slug_/index.svelte-ee756237.css">
+	<link rel="modulepreload" href="/_app/start-936533c6.js">
+	<link rel="modulepreload" href="/_app/chunks/index-b588d774.js">
+	<link rel="modulepreload" href="/_app/chunks/paths-396f020f.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-42f519d3.js">
+	<link rel="modulepreload" href="/_app/pages/_slug_/__layout.svelte-1d27b94c.js">
+	<link rel="modulepreload" href="/_app/chunks/CenterContainer-b2650ee3.js">
+	<link rel="modulepreload" href="/_app/pages/_slug_/index.svelte-b5a99ea9.js">
+	<link rel="modulepreload" href="/_app/chunks/utils-8309f6d0.js">
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<main class="svelte-clyqs5">
+
+<div id="navbar" class="svelte-1lkdt1t"><a class="title-name svelte-1lkdt1t" href="/">NW</a>
+  <a href="/" class="svelte-1lkdt1t">Projects</a><a href="/about" class="svelte-1lkdt1t">About</a>
+</div>
+  <div class="center-container svelte-1pkor3n" style="--target-width:70vw;--max-width:45em;--min-width:initial;--background-color:transparent"><div class="content svelte-1pkor3n">
+
+
+
+
+
+<div class="post-content svelte-1r9bln8"><h1>Robocar Update 1/4/2022</h1>
+  <p>Hello, world! This is the first update of my Robocar project. It seems this project will take me a fairly long time to complete, so I’m batching updates in a progress report of sorts. This update encompasses my work over the past (very slow) month. Below is an image of the Robocar in it’s current state.</p>
+<p><img src="/images/robocar/robocar-lidar-front-1024.jpg" alt="Front of in-progress Robocar with LIDAR mounted.">
+<em>The front of an in-progress Robocar with a LIDAR module mounted and various wires connecting to the Pico.</em></p>
+<h2>Summary</h2>
+<p>The Router successfully routes commands from the Brain to the peripherals, which allows the car to move based on user input to the Brain with an Xbox One controller. I’ve successfully made a high-latency, difficult-to-control, very expensive RC car. Yay.</p>
+<h2>Hardware Progress</h2>
+<p>As per MuSHR recommendations, I replaced the stock motor on the RC car chassis with a more powerful one, installed a capable ESC, and upgraded the steering servo. This process was fairly straightforward, albeit laborious, with the exception of the motor. I have learned that thread-locker is indeed very good at locking a screw, which meant I stripped the grub screw attaching the pinion gear to the stock motor shaft. I had to use a dremel to saw off the motor, but I was eventually successful.</p>
+<p>To mount the electronics, I modeled some basic geometric parts that were fastened to the chassis with M3 screws and nuts. The parts had holes for the Nano, LIDAR, and buck-converter (to convert from 2S LiPo voltage to 5V) which were fastened using M3 screws as well. Once the vehicle can successfully drive with LIDAR data, as in the CSE 478 course, I will print another piece to mount a USB webcam that will be used for computer vision.</p>
+<h2>ROS Progress</h2>
+<p>The project has four main code bases: the ROS workspace on the host machine (a desktop PC), the ROS workspace on the Brain, the source for Robocar logic, and the Router codebase. I was able to get ROS Melodic running on the Nano (Ubuntu 18.04) and the host machine (on an Ubuntu 18.04 VM) and wrote the logic for LIDAR localization.</p>
+<p>As I learned from class, this LIDAR localization involves a predefined map and a particle filter that continously updates on new LIDAR data to estimate the position and orientation of the robot. Data is passed around using the ROS messenger/subscriber framework to keep things asynchronous. While this code passes the few tests I’ve written, it has yet to be tested on the vehicle because of issues regarding motor control.</p>
+<h2>Motor Control Through the Router</h2>
+<p>The Router successfully communicates with the Brain through a serial USB connection, which means data can be requested by, or sent from, the Brain and the Router sends an appropriate response, actuating devices if necessary. To control the motor, the Router uses a PID controller to match a target velocity sent by the Brain, measuring the current velocity for feedback.</p>
+<h2>Velocity Measurement</h2>
+<p>Initially, I measured velocity using one wheel-mounted magnet and a Hall-effect sensor to detect when a revolution had occurred. For slow speeds, this resulted in very long delays between measurements, so I needed to find a way to increase the resolution. I tried using an accelerometer on an MPU6050 to calculate intermediate changes in speed (i.e. acceleration) so the velocity would be more up-to-date, but I ran into issues calibrating the MPU6050 and was getting incorrect readings. I pivotted to a fully-wheel-based system, mounting 8 magnets on the wheel instead of one. So far, the readings have been fairly accurate and occur frequently enough that the integral component of the PID controller can compensate for low-speed errors.</p>
+<h2>The Current Issue</h2>
+<p>When I said the Router “controls” the motor, that may have been overzealous. The car’s motion does not agree with the Brain’s commands <em>at all</em>. When given a target velocity, sometimes it refuses to accelerate, and other times it greatly overshoots the target before shutting down the motor to slow down. Obviously, the Router PID parameters need to be tuned, but I am also fighting the latency and mechanics of the ESC. This is the current blocking issue, and once I fix it, I can begin testing mapping and localization.</p>
+</div></div>
+</div>
+  <footer class="svelte-clyqs5">Powered by 
+    <a href="https://kit.svelte.dev/" target="_blank" rel="noopener">SvelteKit
+    </a>
+    . Hosted on 
+    <a href="https://github.com/nwager/nwager.github.io" target="_blank" rel="noopener">Github
+    </a>
+    .
+  </footer>
+</main>
+
+
+		<script type="module" data-hydrate="x4kqw6">
+		import { start } from "/_app/start-936533c6.js";
+		start({
+			target: document.querySelector('[data-hydrate="x4kqw6"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/_app/pages/__layout.svelte-42f519d3.js"),
+						import("/_app/pages/_slug_/__layout.svelte-1d27b94c.js"),
+						import("/_app/pages/_slug_/index.svelte-b5a99ea9.js")
+				],
+				params: {slug:"robocar-1-4-22"},
+				routeId: "[slug]"
+			}
+		});
+	</script></div>
+	</body>
+</html>
