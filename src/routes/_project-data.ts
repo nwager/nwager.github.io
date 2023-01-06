@@ -13,6 +13,19 @@ const postPath = base + "/";
 
 export const projects: ProjectData[] = [
   {
+    title: "Robocar",
+    description: "Autonomous RC car powered by a Jetson Nano.",
+    images: [
+      "images/robocar/robocar-lidar-front-1024.jpg",
+      "images/robocar/robocar-lidar-back-1024.jpg",
+      "images/robocar/robocar-before-1024.jpg",
+    ],
+    links: [
+      ["Home page", postPath + "robocar"],
+    ],
+    styleOverride: "object-position:center",
+  },
+  {
     title: "Matterport Space Search",
     description: "I interned at Matterport in summer 2021, where I worked on the front-end web-app team. I was able to write and push code to the production codebase, and my summer-long project was to design and implement the prototype for a new feature called Space Search. Users can search and filter through a space's Mattertags, room labels, etc. to better navigate and organize spacial data.",
     images: [
