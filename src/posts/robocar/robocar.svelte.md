@@ -41,10 +41,10 @@ I needed to give the Jetson Nano and Raspberry Pi Pico generic names instead of 
 
 ## Github Repositories
 
-- [Robocar automation source code](https://github.com/nwager/robocar_src)
+- [Robocar ROS overlay](https://github.com/nwager/robocar_overlay)
 - [Onboard ROS Melodic (catkin) workspace](https://github.com/nwager/robocar_ws)
 - [Host machine Melodic (catkin) workspace](https://github.com/nwager/robocar_host_ws)
-- [Auxiliary peripheral router system](https://github.com/nwager/robocar_router)
+- [Auxiliary Router system](https://github.com/nwager/robocar_router)
 
 ## Updates
 
