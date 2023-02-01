@@ -14,6 +14,11 @@
 			text: "linkedin.com/in/noah-wager",
 			link: "https://www.linkedin.com/in/noah-wager",
 		},
+		{
+			icon: "github",
+			text: "github.com/nwager",
+			link: "https://github.com/nwager",
+		},
 	]
 </script>
 
