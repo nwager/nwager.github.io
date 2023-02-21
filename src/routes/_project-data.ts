@@ -13,20 +13,6 @@ const postPath = base + "/";
 
 export const projects: ProjectData[] = [
   {
-    title: "Robocar",
-    description: "Autonomous RC car powered by a Jetson Nano and Raspberry Pi Pico. I've always been fascinated by autonomous vehicles, and the Autonomous Robotics class at the University of Washington introduced me to the technical aspects of creating one. I decided to build my own MuSHR-inspired vehicle and implement the ROS system and algorithms myself, which was both a fun project and an opportunity to learn and practice robotics concepts with physical hardware.",
-    images: [
-      "images/robocar/robocar-lidar-front-1024.jpg",
-      "images/robocar/robocar-lidar-back-1024.jpg",
-      "images/robocar/robocar-before-1024.jpg",
-    ],
-    links: [
-      ["Robocar blog", postPath + "robocar"],
-      ["MuSHR website", "https://mushr.io"],
-    ],
-    styleOverride: "object-position:center",
-  },
-  {
     title: "Matterport Space Search",
     description: "I interned at Matterport in summer 2021, where I worked on the front-end web-app team. I was able to write and push code to the production codebase, and my summer-long project was to design and implement the prototype for a new feature called Space Search. Users can search and filter through a space's Mattertags, room labels, etc. to better navigate and organize spacial data.",
     images: [
@@ -45,6 +31,20 @@ export const projects: ProjectData[] = [
     links: [
       ["View this space", "https://my.matterport.com/show/?m=CRg23STmKZp"]
     ],
+  },
+  {
+    title: "Robocar",
+    description: "Autonomous RC car powered by a Jetson Nano and Raspberry Pi Pico. I've always been fascinated by autonomous vehicles, and the Autonomous Robotics class at the University of Washington introduced me to the technical aspects of creating one. I decided to build my own MuSHR-inspired vehicle and implement the ROS system and algorithms myself, which was both a fun project and an opportunity to learn and practice robotics concepts with physical hardware.",
+    images: [
+      "images/robocar/robocar-lidar-front-1024.jpg",
+      "images/robocar/robocar-lidar-back-1024.jpg",
+      "images/robocar/robocar-before-1024.jpg",
+    ],
+    links: [
+      ["Robocar blog", postPath + "robocar"],
+      ["MuSHR website", "https://mushr.io"],
+    ],
+    styleOverride: "object-position:center",
   },
   {
     title: "This Website",
