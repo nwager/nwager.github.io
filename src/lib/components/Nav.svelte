@@ -13,6 +13,8 @@
     dropdownItems?: NonemptyArray<string>;
   }
 
+  console.log(base);
+
   const navItems: NavItem[] = [
     {
       text: "Projects",
@@ -50,15 +52,16 @@
       class="nav-item"
       class:active={item.url === $page.url.pathname}
       class:dropdown-active={i === activeDropdown}
-      href={item.url}
+      href={item.dropdownItems ? "" : item.url}
       on:click={() => {
         activeDropdown = activeDropdown === i ? -1 : i;
       }}
     >
       {item.text}
       {#if item.dropdownItems}
+        <span class="dropdown-icon icon icon-chevron-up" />
         <div class="nav-dropdown">
-          <TableOfContents sections={item.dropdownItems} />
+          <TableOfContents sections={item.dropdownItems} base={item.url} />
         </div>
       {/if}
     </a>
@@ -97,17 +100,19 @@
     @mixin navLink {
       @include Noah-Bold;
       color: $color-white;
-      text-shadow: 1px 1px $color-theme-red;
       height: 100%;
       display: flex;
       align-items: center;
       box-sizing: border-box;
+      $border-width: 0.2em;
+      border-top: $border-width solid transparent;
+      border-bottom: $border-width solid transparent;
 
       @media (hover: hover) {
         &:hover {
           text-decoration: none;
           color: $color-theme-red;
-          text-shadow: 1px 1px $color-white;
+          border-bottom-color: $color-theme-red;
         }
       }
     }
@@ -118,18 +123,17 @@
     }
     
     .nav-item {
-      @include navLink();
-
       &.active {
-        $border-width: 0.2em;
-        border-top: $border-width solid transparent;
-        border-bottom: $border-width solid $color-theme-red;
+        border-bottom-color: $color-white;
       }
 
-      &.active {
-        $border-width: 0.2em;
-        border-top: $border-width solid transparent;
-        border-bottom: $border-width solid $color-theme-red;
+      @include navLink();
+
+      .dropdown-icon {
+        // text-shadow: none;
+        margin-left: 0.3em;
+        transition: transform 100ms linear;
+        font-weight: 900;
       }
 
       .nav-dropdown {
@@ -137,6 +141,10 @@
       }
 
       &.dropdown-active {
+        .dropdown-icon {
+          transform: rotate(180deg);
+        }
+
         .nav-dropdown {
           display: block;
           position: absolute;
@@ -152,6 +160,7 @@
           :global(.toc a) {
             background-color: transparent;
             @include navLink();
+            border: none;
             font-size: 0.9em;
           }
         }

@@ -17,11 +17,11 @@
 <section>
 	<Header header="Projects" />
 	<ColumnContainer leftSticky={true}>
-		<div slot="left-column">
+		<!-- <div slot="left-column">
 			{#if !isNarrow}
 				<TableOfContents slot="left-column" sections={projects.map(p => p.title)} />
 			{/if}
-		</div>
+		</div> -->
 		<!-- begin default slot -->
 		<div id="projects">
 			{#each projects as proj}

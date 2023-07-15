@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'portfolio-font';
-  src:  url('fonts/portfolio-font.eot?11crtm');
-  src:  url('fonts/portfolio-font.eot?11crtm#iefix') format('embedded-opentype'),
-    url('fonts/portfolio-font.ttf?11crtm') format('truetype'),
-    url('fonts/portfolio-font.woff?11crtm') format('woff'),
-    url('fonts/portfolio-font.svg?11crtm#portfolio-font') format('svg');
+  src:  url('fonts/portfolio-font.eot?1ena8t');
+  src:  url('fonts/portfolio-font.eot?1ena8t#iefix') format('embedded-opentype'),
+    url('fonts/portfolio-font.ttf?1ena8t') format('truetype'),
+    url('fonts/portfolio-font.woff?1ena8t') format('woff'),
+    url('fonts/portfolio-font.svg?1ena8t#portfolio-font') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,8 +25,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-github:before {
-  content: "\eab0";
+.icon-chevron-up:before {
+  content: "\e905";
+}
+.icon-chevron-down:before {
+  content: "\e906";
 }
 .icon-envelope-fill:before {
   content: "\e902";
