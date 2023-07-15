@@ -15,7 +15,14 @@
     {#if links}
       <div class="link-container">
         {#each links as {text, url}}
-          <a href={url} target="_blank" rel="noopener">{text}</a>
+          <!--
+            check url.startsWith so only external links are new-tabbed
+          -->
+          <a
+            href={url}
+            target={url.startsWith('/') ? "" : "_blank"}
+            rel="noopener"
+          >{text}</a>
         {/each}
       </div>
     {/if}

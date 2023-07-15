@@ -33,6 +33,20 @@ export const projects: NonemptyArray<ProjectData> = [
     ],
   },
   {
+    title: "Robocar",
+    description: "Autonomous RC car powered by a Jetson Nano and Raspberry Pi Pico. I've always been fascinated by autonomous vehicles, and the Autonomous Robotics class at the University of Washington introduced me to the technical aspects of creating one. I decided to build my own MuSHR-inspired vehicle and implement the ROS system and algorithms myself, which was both a fun project and an opportunity to learn and practice robotics concepts with physical hardware.",
+    images: [
+      "images/robocar/robocar-lidar-front-1024.jpg",
+      "images/robocar/robocar-lidar-back-1024.jpg",
+      "images/robocar/robocar-before-1024.jpg",
+    ],
+    links: [
+      {text: "Robocar blog", url: postPath + "robocar"},
+      {text: "MuSHR website", url: "https://mushr.io"},
+    ],
+    styleOverride: "object-position:center",
+  },
+  {
     title: "This Website",
     description: "Built with SvelteKit and hosted by GitHub Pages, this website shows snippets of my personal and professional projects. In addition to sharing my work, creating this site has taught me a great deal about Svelte and SvelteKit, from syntax to routing. After using React's virtual DOM for so many sites and apps, the compiled nature of Svelte is rather refreshing.",
     images: [
