@@ -25,7 +25,7 @@
           -->
           <a
             href={url}
-            target={url.startsWith('/') || url.startsWith(base) ? null : "_blank"}
+            target={url.startsWith('/') || (base && url.startsWith(base)) ? null : "_blank"}
             rel="noopener"
           >{text}</a>
         {/each}
