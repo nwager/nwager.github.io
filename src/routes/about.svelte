@@ -33,28 +33,28 @@
 		<div class="bio">
 			<h2>About Me</h2>
 			<p>
-				I am a third-year student in Computer Engineering at the University of Washington, Seattle (UW). I have experience in both software and hardware roles, with skills in front-end development and electronics.
+				I recently graduated with a Bachelor's in Computer Engineering at the University of Washington, Seattle (UW). I have experience in both software and hardware roles, with skills in front-end development and electronics.
 			</p>
 
 			<h2>Design, Build, Fly</h2>
 			
 			<p>
-				I'm an active member of <a href="https://www.designbuildflyuw.com/" target="_blank" rel="noopener">Design, Build, Fly UW</a>, an engineering club at UW. Dozens of students collaborate in subteams to design and manufacture a mid-size RC airplane to compete with other schools in a <a href="https://www.aiaa.org/dbf" target="_blank" rel="noopener">competition hosted by the AIAA</a>.
+				During college, I was an active member of <a href="https://www.designbuildflyuw.com/" target="_blank" rel="noopener">Design, Build, Fly UW</a>, an engineering club at UW. Dozens of students collaborate in subteams to design and manufacture a mid-size RC airplane to compete with other schools in a <a href="https://www.aiaa.org/dbf" target="_blank" rel="noopener">competition hosted by the AIAA</a>.
 				<br/>
-				As a member of the Avionics team, I am responsible for creating wiring schematics, assembling and soldering electrical components, and installing the flight controller and control surfaces.
+				As a member of the Avionics team, I was responsible for creating wiring schematics, assembling and soldering electrical components, and installing the flight controller and control surfaces.
 			</p>
 			<figure>
 				<a class="image-link" href="{base}/images/about/uw22albatross.jpg" target="_blank" rel="noopener">
 					<img src="{base}/images/about/uw22albatross-1024.jpg" alt="DBF plane 2022: UW-22 Albatross" />
 				</a>
-				<figcaption>Our plane for the 2022 competition: the UW-22 Albatross.</figcaption>
+				<figcaption>DBF UW's plane for the 2022 competition: the UW-22 Albatross.</figcaption>
 			</figure>
 
 			<h2>Music</h2>
 			<p>
 				When I'm not working on projects, I spend much of my free time playing electric bass and guitar. I started on bass in 2012 and began learning guitar in high school, playing covers at School of Rock, Portland.
 				<br/>
-				I currently play bass for <a href="https://thesleepyhaunts.com/home/" target="_blank" rel="noopener">The Sleepy Haunts</a>, an indie-pop band with rock influence. We recently played in MoPOP's <a href="https://mopop.org/sound-off-2022" target="_blank" rel="noopener">2022 Sound Off!</a> showcase (<a href="https://www.youtube.com/watch?v=RDYRUcaeVVM&ab_channel=MuseumofPopCulture" target="_blank" rel="noopener">cool video</a>), where we performed in the museum's Sky Church with other up-and-coming Seattle artists.
+				I currently play bass for <a href="https://thesleepyhaunts.com/home/" target="_blank" rel="noopener">The Sleepy Haunts</a>, an indie-pop band with rock influence. In 2022, we played in MoPOP's <a href="https://mopop.org/sound-off-2022" target="_blank" rel="noopener">2022 Sound Off!</a> showcase (<a href="https://www.youtube.com/watch?v=RDYRUcaeVVM&ab_channel=MuseumofPopCulture" target="_blank" rel="noopener">cool video</a>), where we performed in the museum's Sky Church with other up-and-coming Seattle artists. Since then, we've played various gigs around Seattle and are releasing new music soon!
 			</p>
 			<figure>
 				<a class="image-link" href="{base}/images/about/soundoff.jpg" target="_blank" rel="noopener">
