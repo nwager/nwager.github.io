@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?1ena8t');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?1ena8t#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?1ena8t') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?1ena8t') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?1ena8t##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?7ss0wi');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?7ss0wi#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?7ss0wi') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?7ss0wi') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?7ss0wi##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -60,6 +60,11 @@
 .icon-chevron-right {
   &:before {
     content: $icon-chevron-right; 
+  }
+}
+.icon-github {
+  &:before {
+    content: $icon-github; 
   }
 }
 

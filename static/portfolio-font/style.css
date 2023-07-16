@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'portfolio-font';
-  src:  url('fonts/portfolio-font.eot?1ena8t');
-  src:  url('fonts/portfolio-font.eot?1ena8t#iefix') format('embedded-opentype'),
-    url('fonts/portfolio-font.ttf?1ena8t') format('truetype'),
-    url('fonts/portfolio-font.woff?1ena8t') format('woff'),
-    url('fonts/portfolio-font.svg?1ena8t#portfolio-font') format('svg');
+  src:  url('fonts/portfolio-font.eot?7ss0wi');
+  src:  url('fonts/portfolio-font.eot?7ss0wi#iefix') format('embedded-opentype'),
+    url('fonts/portfolio-font.ttf?7ss0wi') format('truetype'),
+    url('fonts/portfolio-font.woff?7ss0wi') format('woff'),
+    url('fonts/portfolio-font.svg?7ss0wi#portfolio-font') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -45,4 +45,7 @@
 }
 .icon-chevron-right:before {
   content: "\e901";
+}
+.icon-github:before {
+  content: "\eab0";
 }
