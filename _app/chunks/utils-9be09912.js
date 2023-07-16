@@ -1,0 +1,1 @@
+function r(e,t){return(e%t+t)%t}const a=e=>{var t,s;return(s=(t=e.match(/([\w-]+)\.(svelte\.md|md|svx)/i))==null?void 0:t[1])!=null?s:null},n=e=>e.replace(/\s/g,"-").replace(/[^a-z0-9\-]/gi,"").toLowerCase();export{r as m,a as s,n as t};
