@@ -1,34 +1,13 @@
 <script lang="ts">
   import type { Link } from "$lib/types";
-  import { onMount } from "svelte";
 
   export let title: string | undefined = undefined;
-  export let base: string | undefined = undefined;
-  export let sections: string[];
-  let links: Link[] = [];
-
-  /**
-   * Encode text to a safe format for text link hashes.
-   */
-  const encodeText = (text: string) => {
-    return encodeURIComponent(text)
-      .replace('-', '%2D') // url-encode hyphens
-  }
-
-  onMount(() => {
-    const baseUrl = base === undefined ? window.location.href : base;
-    links = sections.map(text => {
-      return {
-        text,
-        url: `${baseUrl}#:~:text=${encodeText(text)}`
-      }
-    })
-  });
+  export let links: Link[] = [];
 </script>
 
-<div class="toc">
+<div class="linklist">
   {#if title}
-    <div class="toc-title">{title}</div>
+    <div class="linklist-title">{title}</div>
   {/if}
   <ul>
     {#each links as {text, url}}
@@ -42,10 +21,10 @@
 <style lang="scss">
   @import "src/lib/style/variables";
 
-  .toc {
+  .linklist {
     padding: 0.6em;
 
-    .toc-title {
+    .linklist-title {
       margin: 0;
       text-align: left;
       margin-bottom: 0.2em;

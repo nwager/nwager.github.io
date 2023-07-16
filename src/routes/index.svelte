@@ -2,7 +2,7 @@
   import ColumnContainer from "$lib/components/ColumnContainer.svelte";
 	import Header from "$lib/components/Header.svelte";
   import Project from "$lib/components/Project.svelte";
-	import TableOfContents from "$lib/components/TableOfContents.svelte";
+	import TableOfContents from "$lib/components/LinkList.svelte";
 	import { screenWidth } from "$lib/stores/screenWidthStore";
 	import { NARROW_WIDTH } from "$lib/style/variables";
   import { projects } from "./_project-data";

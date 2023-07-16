@@ -1,6 +1,7 @@
 <script lang="ts">
   import Nav from "$lib/components/Nav.svelte";
   import { screenWidth } from "$lib/stores/screenWidthStore";
+	import { onMount } from "svelte";
   import "../app.scss";
 
   function updateScreenWidthStore(
@@ -10,6 +11,8 @@
   ) {
     screenWidth.set(e.currentTarget.innerWidth);
   }
+
+  onMount(() => screenWidth.set(window.innerWidth));
 </script>
 
 <svelte:window on:resize={updateScreenWidthStore} />

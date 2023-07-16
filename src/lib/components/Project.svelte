@@ -1,6 +1,8 @@
 <script lang="ts">
   import type { ProjectData } from "src/routes/_project-data";
   import ImageCarousel from "./ImageCarousel.svelte";
+	import { textToHashLink } from "$lib/utils";
+	import { base } from "$app/paths";
 
   export let project: ProjectData;
   let {title, description, images, links, styleOverride} = project;
@@ -8,9 +10,12 @@
 </script>
 
 <div class="project">
+  <a class="title-anchor" id={`${textToHashLink(title)}`} href={`#${textToHashLink(title)}`}>{''}</a>
   <ImageCarousel {images} imageStyle={styleOverride} />
   <div class="text-container">
-    <h2>{title}</h2>
+    <h2>
+      {title}
+    </h2>
     <p class={"description"}>{description}</p>
     {#if links}
       <div class="link-container">
@@ -20,7 +25,7 @@
           -->
           <a
             href={url}
-            target={url.startsWith('/') ? "" : "_blank"}
+            target={url.startsWith('/') || url.startsWith(base) ? null : "_blank"}
             rel="noopener"
           >{text}</a>
         {/each}
@@ -53,6 +58,11 @@
       .text-container h2 {
         @include Noah-Bold; // font doesn't look good on mobile
       }
+    }
+
+    .title-anchor {
+      position: absolute;
+      margin-top: calc(($navbar-height + 1rem) * -1);
     }
 
     .text-container {
